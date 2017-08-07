@@ -1,4 +1,4 @@
-//
+///
 //  AppDelegate.m
 //  Watermelon
 //
@@ -10,13 +10,6 @@
 
 #import "Watermelon.h"
 
-#import <RealReachability.h>
-
-#import "WMVer.h"
-
-#import "WMJsonHandler.h"
-
-#import "WMEnvironmentConfigure.h"
 
 @interface AppDelegate ()
 
@@ -27,46 +20,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
-    [[RealReachability sharedInstance] startNotifier];
-    
-    [[RealReachability sharedInstance] reachabilityWithBlock:^(ReachabilityStatus status) {
-        
-        
-        switch (status) {
-            case RealStatusNotReachable:{
-                
-            }
-                break;
-            case RealStatusViaWWAN:
-            case RealStatusViaWiFi:{
-                NSURL *verJsonURL = [NSURL URLWithString:@"http://www.kyson.cn/demo/ver.json"];
-                NSError *error = nil;
-                NSString *verJson = [NSString stringWithContentsOfURL:verJsonURL encoding:NSUTF8StringEncoding error:&error];
-                if (!error) {
-                    WMVer *verRemote = [WMVer verWithVerJson:verJson];
-                    WMVer *verLocal = [WMVer verWithVerJson:[WMEnvironmentConfigure verJson]];
-                    
-                    BOOL isEqual = [verRemote versionIsEqualto:verLocal];
-                    
-                    
-                    
-                }
-                
-                
-                
-            }
-                break;
-                
-                
-            default:
-                break;
-        }
-        
-    }];
-    
-    
-    
     
     [Watermelon registeWatermelonService];
     return YES;

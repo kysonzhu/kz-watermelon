@@ -11,7 +11,7 @@
 @interface Watermelon : NSObject
 
 
-
++(Watermelon *) shareInstance ;
 
 
 
