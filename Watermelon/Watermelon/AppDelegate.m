@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 
+#import "Watermelon.h"
+
 @interface AppDelegate ()
 
 @end
@@ -17,6 +19,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [Watermelon registeWatermelonService];
     return YES;
 }
 

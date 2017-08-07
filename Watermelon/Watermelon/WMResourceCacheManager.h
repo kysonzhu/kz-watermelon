@@ -1,5 +1,5 @@
 //
-//  ResourceCacheManager.h
+//  WMResourceCacheManager.h
 //  Watermelon
 //
 //  Created by zhujinhui on 2017/8/5.
@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ResourceCacheManager : NSURLCache
+@interface WMResourceCacheManager : NSURLCache
 
 @end

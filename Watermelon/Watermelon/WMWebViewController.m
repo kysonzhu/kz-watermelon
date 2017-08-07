@@ -14,7 +14,7 @@
 
 
 
-@interface WMWebViewController ()
+@interface WMWebViewController ()<UIWebViewDelegate>
 
 @property (nonatomic, strong) UIWebView *webView;
 
@@ -26,11 +26,35 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    NSString *htmlPath = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"];
-    NSURL *URL = [NSURL fileURLWithPath:htmlPath];
+//    NSString *htmlPath = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"];
+//    NSURL *URL = [NSURL fileURLWithPath:htmlPath];
+    NSURL *URL = [NSURL URLWithString:@"http://www.kyson.cn/demo/watermelon/"];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:URL];
+    request.timeoutInterval = 3.f;
+    self.webView.delegate = self;
     [self.webView loadRequest:request];
     [self.view addSubview:self.webView];
+}
+
+
+
+
+
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+    
+    return YES;
+}
+
+
+
+- (void)webViewDidStartLoad:(UIWebView *)webView {
+    
+}
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    
+}
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
+    
 }
 
 
