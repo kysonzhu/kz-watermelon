@@ -1,0 +1,467 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D9CC76C72EF1EA4EC4C8B7F1 /* libPods-Watermelon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D749FAA53DFD515A82920CD /* libPods-Watermelon.a */; };
+		DEE8F0C71F38965900CE80A9 /* watermelon.zip in Resources */ = {isa = PBXBuildFile; fileRef = DEE8F0C61F38965900CE80A9 /* watermelon.zip */; };
+		DEE8F0CB1F38969E00CE80A9 /* WMVer.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE8F0CA1F38969E00CE80A9 /* WMVer.m */; };
+		DEE8F0CE1F38977500CE80A9 /* MDSModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE8F0CD1F38977500CE80A9 /* MDSModel.m */; };
+		DEE8F0D21F389A6100CE80A9 /* WMJsonHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE8F0D11F389A6100CE80A9 /* WMJsonHandler.m */; };
+		DEE8F0D51F389B2B00CE80A9 /* WMEnvironmentConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE8F0D41F389B2B00CE80A9 /* WMEnvironmentConfigure.m */; };
+		DEF8C15D1F35514D00619822 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF8C15C1F35514D00619822 /* main.m */; };
+		DEF8C1601F35514D00619822 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF8C15F1F35514D00619822 /* AppDelegate.m */; };
+		DEF8C1631F35514D00619822 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF8C1621F35514D00619822 /* ViewController.m */; };
+		DEF8C1661F35514D00619822 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEF8C1641F35514D00619822 /* Main.storyboard */; };
+		DEF8C1681F35514D00619822 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEF8C1671F35514D00619822 /* Assets.xcassets */; };
+		DEF8C16B1F35514D00619822 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEF8C1691F35514D00619822 /* LaunchScreen.storyboard */; };
+		DEF8C18D1F35542F00619822 /* Watermelon.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF8C18C1F35542F00619822 /* Watermelon.m */; };
+		DEF8C1901F3554C400619822 /* WMResourceCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF8C18F1F3554C400619822 /* WMResourceCacheManager.m */; };
+		DEF8C1931F35564D00619822 /* WMWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF8C1921F35564D00619822 /* WMWebViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		148A6AA0DA7BC6369DC08DFC /* Pods-Watermelon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Watermelon.release.xcconfig"; path = "Pods/Target Support Files/Pods-Watermelon/Pods-Watermelon.release.xcconfig"; sourceTree = "<group>"; };
+		9D749FAA53DFD515A82920CD /* libPods-Watermelon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Watermelon.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD990F7B4803F0F3CE7DAA88 /* Pods-Watermelon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Watermelon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Watermelon/Pods-Watermelon.debug.xcconfig"; sourceTree = "<group>"; };
+		DEE8F0C61F38965900CE80A9 /* watermelon.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = watermelon.zip; sourceTree = "<group>"; };
+		DEE8F0C91F38969E00CE80A9 /* WMVer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMVer.h; sourceTree = "<group>"; };
+		DEE8F0CA1F38969E00CE80A9 /* WMVer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMVer.m; sourceTree = "<group>"; };
+		DEE8F0CC1F38977500CE80A9 /* MDSModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDSModel.h; sourceTree = "<group>"; };
+		DEE8F0CD1F38977500CE80A9 /* MDSModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDSModel.m; sourceTree = "<group>"; };
+		DEE8F0D01F389A6100CE80A9 /* WMJsonHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMJsonHandler.h; sourceTree = "<group>"; };
+		DEE8F0D11F389A6100CE80A9 /* WMJsonHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMJsonHandler.m; sourceTree = "<group>"; };
+		DEE8F0D31F389B2B00CE80A9 /* WMEnvironmentConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMEnvironmentConfigure.h; sourceTree = "<group>"; };
+		DEE8F0D41F389B2B00CE80A9 /* WMEnvironmentConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMEnvironmentConfigure.m; sourceTree = "<group>"; };
+		DEF8C1581F35514D00619822 /* Watermelon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Watermelon.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEF8C15C1F35514D00619822 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DEF8C15E1F35514D00619822 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		DEF8C15F1F35514D00619822 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DEF8C1611F35514D00619822 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		DEF8C1621F35514D00619822 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		DEF8C1651F35514D00619822 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DEF8C1671F35514D00619822 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DEF8C16A1F35514D00619822 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DEF8C16C1F35514D00619822 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DEF8C18B1F35542F00619822 /* Watermelon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Watermelon.h; sourceTree = "<group>"; };
+		DEF8C18C1F35542F00619822 /* Watermelon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Watermelon.m; sourceTree = "<group>"; };
+		DEF8C18E1F3554C400619822 /* WMResourceCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMResourceCacheManager.h; sourceTree = "<group>"; };
+		DEF8C18F1F3554C400619822 /* WMResourceCacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMResourceCacheManager.m; sourceTree = "<group>"; };
+		DEF8C1911F35564D00619822 /* WMWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMWebViewController.h; sourceTree = "<group>"; };
+		DEF8C1921F35564D00619822 /* WMWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMWebViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DEF8C1551F35514D00619822 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9CC76C72EF1EA4EC4C8B7F1 /* libPods-Watermelon.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		11BA3221BA76690AD8126F58 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AD990F7B4803F0F3CE7DAA88 /* Pods-Watermelon.debug.xcconfig */,
+				148A6AA0DA7BC6369DC08DFC /* Pods-Watermelon.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C259A434B1DC1183D89C2063 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9D749FAA53DFD515A82920CD /* libPods-Watermelon.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DEE8F0C81F38968300CE80A9 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				DEE8F0CC1F38977500CE80A9 /* MDSModel.h */,
+				DEE8F0CD1F38977500CE80A9 /* MDSModel.m */,
+				DEE8F0C91F38969E00CE80A9 /* WMVer.h */,
+				DEE8F0CA1F38969E00CE80A9 /* WMVer.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		DEE8F0CF1F389A5500CE80A9 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				DEE8F0D01F389A6100CE80A9 /* WMJsonHandler.h */,
+				DEE8F0D11F389A6100CE80A9 /* WMJsonHandler.m */,
+				DEE8F0D31F389B2B00CE80A9 /* WMEnvironmentConfigure.h */,
+				DEE8F0D41F389B2B00CE80A9 /* WMEnvironmentConfigure.m */,
+			);
+			path = util;
+			sourceTree = "<group>";
+		};
+		DEF8C14F1F35514D00619822 = {
+			isa = PBXGroup;
+			children = (
+				DEF8C15A1F35514D00619822 /* Watermelon */,
+				DEF8C1591F35514D00619822 /* Products */,
+				11BA3221BA76690AD8126F58 /* Pods */,
+				C259A434B1DC1183D89C2063 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		DEF8C1591F35514D00619822 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DEF8C1581F35514D00619822 /* Watermelon.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DEF8C15A1F35514D00619822 /* Watermelon */ = {
+			isa = PBXGroup;
+			children = (
+				DEE8F0CF1F389A5500CE80A9 /* util */,
+				DEE8F0C81F38968300CE80A9 /* model */,
+				DEF8C1941F35578B00619822 /* resource */,
+				DEF8C15E1F35514D00619822 /* AppDelegate.h */,
+				DEF8C15F1F35514D00619822 /* AppDelegate.m */,
+				DEF8C18B1F35542F00619822 /* Watermelon.h */,
+				DEF8C18C1F35542F00619822 /* Watermelon.m */,
+				DEF8C18E1F3554C400619822 /* WMResourceCacheManager.h */,
+				DEF8C18F1F3554C400619822 /* WMResourceCacheManager.m */,
+				DEF8C1911F35564D00619822 /* WMWebViewController.h */,
+				DEF8C1921F35564D00619822 /* WMWebViewController.m */,
+				DEF8C1611F35514D00619822 /* ViewController.h */,
+				DEF8C1621F35514D00619822 /* ViewController.m */,
+				DEF8C1641F35514D00619822 /* Main.storyboard */,
+				DEF8C1671F35514D00619822 /* Assets.xcassets */,
+				DEF8C1691F35514D00619822 /* LaunchScreen.storyboard */,
+				DEF8C16C1F35514D00619822 /* Info.plist */,
+				DEF8C15B1F35514D00619822 /* Supporting Files */,
+			);
+			path = Watermelon;
+			sourceTree = "<group>";
+		};
+		DEF8C15B1F35514D00619822 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DEF8C15C1F35514D00619822 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DEF8C1941F35578B00619822 /* resource */ = {
+			isa = PBXGroup;
+			children = (
+				DEE8F0C61F38965900CE80A9 /* watermelon.zip */,
+			);
+			path = resource;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DEF8C1571F35514D00619822 /* Watermelon */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DEF8C16F1F35514D00619822 /* Build configuration list for PBXNativeTarget "Watermelon" */;
+			buildPhases = (
+				F8EAD4003DEE9AE06620C1E1 /* [CP] Check Pods Manifest.lock */,
+				DEF8C1541F35514D00619822 /* Sources */,
+				DEF8C1551F35514D00619822 /* Frameworks */,
+				DEF8C1561F35514D00619822 /* Resources */,
+				EF318D4BD86B22F7BB508DE9 /* [CP] Embed Pods Frameworks */,
+				F1070951DE0A85482C461B4C /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Watermelon;
+			productName = Watermelon;
+			productReference = DEF8C1581F35514D00619822 /* Watermelon.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DEF8C1501F35514D00619822 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = kyson;
+				TargetAttributes = {
+					DEF8C1571F35514D00619822 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = C9YH4WL4JZ;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = DEF8C1531F35514D00619822 /* Build configuration list for PBXProject "Watermelon" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DEF8C14F1F35514D00619822;
+			productRefGroup = DEF8C1591F35514D00619822 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DEF8C1571F35514D00619822 /* Watermelon */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DEF8C1561F35514D00619822 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEF8C16B1F35514D00619822 /* LaunchScreen.storyboard in Resources */,
+				DEE8F0C71F38965900CE80A9 /* watermelon.zip in Resources */,
+				DEF8C1681F35514D00619822 /* Assets.xcassets in Resources */,
+				DEF8C1661F35514D00619822 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		EF318D4BD86B22F7BB508DE9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Watermelon/Pods-Watermelon-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F1070951DE0A85482C461B4C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Watermelon/Pods-Watermelon-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F8EAD4003DEE9AE06620C1E1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DEF8C1541F35514D00619822 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEF8C1631F35514D00619822 /* ViewController.m in Sources */,
+				DEF8C1931F35564D00619822 /* WMWebViewController.m in Sources */,
+				DEE8F0CE1F38977500CE80A9 /* MDSModel.m in Sources */,
+				DEE8F0D21F389A6100CE80A9 /* WMJsonHandler.m in Sources */,
+				DEE8F0D51F389B2B00CE80A9 /* WMEnvironmentConfigure.m in Sources */,
+				DEF8C18D1F35542F00619822 /* Watermelon.m in Sources */,
+				DEE8F0CB1F38969E00CE80A9 /* WMVer.m in Sources */,
+				DEF8C1901F3554C400619822 /* WMResourceCacheManager.m in Sources */,
+				DEF8C1601F35514D00619822 /* AppDelegate.m in Sources */,
+				DEF8C15D1F35514D00619822 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DEF8C1641F35514D00619822 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DEF8C1651F35514D00619822 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DEF8C1691F35514D00619822 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DEF8C16A1F35514D00619822 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DEF8C16D1F35514D00619822 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		DEF8C16E1F35514D00619822 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DEF8C1701F35514D00619822 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD990F7B4803F0F3CE7DAA88 /* Pods-Watermelon.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = C9YH4WL4JZ;
+				INFOPLIST_FILE = Watermelon/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.medishare.Watermelon;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DEF8C1711F35514D00619822 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 148A6AA0DA7BC6369DC08DFC /* Pods-Watermelon.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = C9YH4WL4JZ;
+				INFOPLIST_FILE = Watermelon/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.medishare.Watermelon;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DEF8C1531F35514D00619822 /* Build configuration list for PBXProject "Watermelon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DEF8C16D1F35514D00619822 /* Debug */,
+				DEF8C16E1F35514D00619822 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DEF8C16F1F35514D00619822 /* Build configuration list for PBXNativeTarget "Watermelon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DEF8C1701F35514D00619822 /* Debug */,
+				DEF8C1711F35514D00619822 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DEF8C1501F35514D00619822 /* Project object */;
+}
