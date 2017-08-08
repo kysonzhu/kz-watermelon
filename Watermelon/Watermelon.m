@@ -64,9 +64,8 @@
             }
                 break;
             case WMBootModeAllModule: {
-                [WMPackageManager checkCurrentVersionIsLatest];
-                
                 [WMResourceCacheManager installCacheModule];
+                [WMPackageManager checkCurrentVersionIsLatest];
             }
                 
             default:
@@ -74,6 +73,9 @@
         }
         
         _currentBootMode = bootMode;
+        
+        //post notification
+        [[NSNotificationCenter defaultCenter] postNotificationName:WatermelonNotificationModeSettingFinished object:nil];
         
     }];
 

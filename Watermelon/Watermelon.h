@@ -11,6 +11,9 @@
 #import "WMBIOS.h"
 
 
+static NSString  *WatermelonNotificationModeSettingFinished = @"cn.kyson.Notification.WatermelonNotificationModeSettingFinished";
+
+
 @interface Watermelon : NSObject
 
 
