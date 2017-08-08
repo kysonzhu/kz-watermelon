@@ -10,4 +10,11 @@
 
 @interface WMResourceCacheManager : NSURLCache
 
+
+/**
+ *  install cache module
+ */
++ (void) installCacheModule;
+
+
 @end

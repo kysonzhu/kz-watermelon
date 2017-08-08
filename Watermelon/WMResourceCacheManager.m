@@ -10,6 +10,9 @@
 
 
 
+#define K_MEMORY_CAPACITY (1024*1024*4)
+#define K_DISK_CAPACITY (1024*1024*20)
+
 @interface WMResourceCacheManager ()
 
 /**
@@ -23,6 +26,10 @@
 @implementation WMResourceCacheManager
 
 
++ (void) installCacheModule {
+    WMResourceCacheManager *cacheManager = [[WMResourceCacheManager alloc] initWithMemoryCapacity:K_MEMORY_CAPACITY diskCapacity:K_DISK_CAPACITY diskPath:nil];
+    [NSURLCache setSharedURLCache:cacheManager];
+}
 
 
 - (nullable NSCachedURLResponse *)cachedResponseForRequest:(NSURLRequest *)request {

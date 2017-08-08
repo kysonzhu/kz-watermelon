@@ -12,7 +12,7 @@
 
 static NSString  *WatermelonNotificationNewVersionFinded = @"cn.kyson.Notification.WatermelonNotificationNewVersionFinded";
 
-
+#define K_DEFAULT_PACKAGE_NAME @"dist"
 
 /**
  * Package Manager
@@ -31,5 +31,16 @@ static NSString  *WatermelonNotificationNewVersionFinded = @"cn.kyson.Notificati
  * check if the version is latest
  */
 + (void) checkCurrentVersionIsLatest ;
+
+/**
+ * the package in document direcory exists or not
+ */
++(BOOL) isPackageExists;
+
+
+/**
+ * install local package
+ */
++(void) installLocalPackage ;
 
 @end

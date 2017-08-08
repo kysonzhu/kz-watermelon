@@ -8,8 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+#import "WMBIOS.h"
+
+
 @interface Watermelon : NSObject
 
+
+/**
+ * current boot mode
+ */
+@property (nonatomic, readonly) WMBootMode currentBootMode;
 
 +(Watermelon *) shareInstance ;
 
@@ -19,6 +27,9 @@
  * register service
  */
 +(void) registeWatermelonService;
+
+
+
 
 
 

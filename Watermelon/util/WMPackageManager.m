@@ -18,7 +18,7 @@
 
 #import "WMEnvironmentConfigure.h"
 
-
+#import <SSZipArchive.h>
 
 @interface WMPackageManager ()
 
@@ -123,6 +123,51 @@
         
         
 }
+
+
+
++(BOOL)isPackageExists {
+    NSString *verJson = [WMEnvironmentConfigure verJson];
+    if (verJson) {
+        WMVer *ver = [WMVer verWithVerJson:verJson];
+        NSString *packageName = ver.data.firstObject.packageName;
+        if (packageName.length > 0) {
+            NSString *documentDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+            NSString *path = [documentDirectory stringByAppendingPathComponent:packageName];
+            
+            BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:path];
+            
+            return fileExists;
+            
+        }
+    }
+    
+    return NO;
+}
+
+
++(void) installLocalPackage {
+    
+    NSString *documentDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    NSString *distPath = [documentDirectory stringByAppendingPathComponent:K_DEFAULT_PACKAGE_NAME];
+    
+    NSString *localPackagePath = [[NSBundle mainBundle] pathForResource:@"watermelon" ofType:@"zip"];
+    
+    //remove the same name package in document dictory
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    [fileManager removeItemAtPath:distPath error:nil];
+    
+    BOOL zipSuccess = [SSZipArchive unzipFileAtPath:localPackagePath toDestination:distPath];
+    if (!zipSuccess) {
+        NSLog(@"package install failed");
+    }
+    
+}
+
+
+
+
+
 
 
 @end

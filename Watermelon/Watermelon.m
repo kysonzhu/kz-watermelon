@@ -10,10 +10,10 @@
 
 #import "WMResourceCacheManager.h"
 #import "WMPackageManager.h"
+#import "WMEnvironmentConfigure.h"
 
+#import "WMVer.h"
 
-#define K_MEMORY_CAPACITY (1024*1024*4)
-#define K_DISK_CAPACITY (1024*1024*20)
 
 
 @interface Watermelon ()
@@ -42,11 +42,43 @@
 
 +(void) registeWatermelonService{
     
-    [WMPackageManager checkCurrentVersionIsLatest];
+    [[self shareInstance] registService];
     
-    WMResourceCacheManager *cacheManager = [[WMResourceCacheManager alloc] initWithMemoryCapacity:K_MEMORY_CAPACITY diskCapacity:K_DISK_CAPACITY diskPath:nil];
-    [NSURLCache setSharedURLCache:cacheManager];
+    
 }
+
+
+
+-(void) registService {
+    /**
+     * start basic input and out put system
+     */
+    [[WMBIOS shareInstance] startFinishBasicMode:^(WMBootMode bootMode) {
+        
+        switch (bootMode) {
+            case WMBootModeBasicModule:{
+                if (![WMPackageManager isPackageExists]) {
+                    [WMPackageManager installLocalPackage];
+                }
+                
+            }
+                break;
+            case WMBootModeAllModule: {
+                [WMPackageManager checkCurrentVersionIsLatest];
+                
+                [WMResourceCacheManager installCacheModule];
+            }
+                
+            default:
+                break;
+        }
+        
+        _currentBootMode = bootMode;
+        
+    }];
+
+}
+
 
 
 
@@ -60,8 +92,6 @@
     
     return _packageManager;
 }
-
-
 
 
 

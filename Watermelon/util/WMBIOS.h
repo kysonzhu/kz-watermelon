@@ -9,11 +9,31 @@
 #import <Foundation/Foundation.h>
 
 
+///枚举：logo位置
+typedef enum {
+    WMBootModeBasicModule = 0, //Basic module,including local package but no url cache system
+    WMBootModeUpdateModule,   // Update model,no using local package and url cache system but has network
+    WMBootModeAllModule      //All in,including local package,url cache,network
+} WMBootMode;
+
+typedef void(^BootModeSuccess)(WMBootMode bootMode);
 
 /**
  * Like PC BIOS,this class provide self-inspection of system
  */
 
 @interface WMBIOS : NSObject
+
+
+
+
+/**
+ * new sigleton instance
+ */
++(WMBIOS *) shareInstance ;
+
+
+
+- (void) startFinishBasicMode:(BootModeSuccess) success;
 
 @end
