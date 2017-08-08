@@ -39,6 +39,15 @@
     return sharedInstance;
 }
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(latestVersionFound:) name:WatermelonNotificationNewVersionFinded object:nil];
+    }
+    return self;
+}
+
 
 +(void) registeWatermelonService{
     
@@ -65,7 +74,7 @@
                 break;
             case WMBootModeAllModule: {
                 [WMResourceCacheManager installCacheModule];
-                [WMPackageManager checkCurrentVersionIsLatest];
+                [WMPackageManager installRemotePackage];
             }
                 
             default:
@@ -79,6 +88,18 @@
         
     }];
 
+}
+
+
+- (void) latestVersionFound: (NSNotification *) notification {
+    
+    NSDictionary *notificationObj = notification.object;
+    WMVer *verRemote = [[WMVer alloc] init];
+    [verRemote loadPropertiesWithData:notificationObj];
+    
+    
+
+    
 }
 
 

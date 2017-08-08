@@ -34,6 +34,19 @@
 
 
 
++(WMPackageManager *) shareInstance{
+    static WMPackageManager *sharedInstance = nil;
+    
+    static dispatch_once_t predicate;
+    dispatch_once(&predicate, ^{
+        sharedInstance = [[self alloc] init];
+        
+    });
+    return sharedInstance;
+}
+
+
+
 /**
  * Judge if the package version is latest
  */
@@ -60,7 +73,8 @@
                     BOOL isEqual = [verRemote versionIsEqualto:verLocal];
                     
                     if (!isEqual) {
-                        [[NSNotificationCenter defaultCenter] postNotificationName:WatermelonNotificationNewVersionFinded object:nil];
+                        NSDictionary *verRemoteDictionary = [verRemote dictionaryRepresentation];
+                        [[NSNotificationCenter defaultCenter] postNotificationName:WatermelonNotificationNewVersionFinded object:verRemoteDictionary];
                     } else {
                         //do nothign
                     }
@@ -164,7 +178,60 @@
     
 }
 
++(void) installRemotePackage {
+    NSURL *verJsonURL = [NSURL URLWithString:URL_VER_JSON];
+    NSError *error = nil;
+    NSString *verJson = [NSString stringWithContentsOfURL:verJsonURL encoding:NSUTF8StringEncoding error:&error];
+    if (!error) {
+        WMVer *verRemote = [WMVer verWithVerJson:verJson];
+        NSString *downloadURL = verRemote.data.firstObject.zipDownloadUrl;
+        
+        //remote address
+        NSURL *URL = [NSURL URLWithString:downloadURL];
+        //configure
+        NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+        
+        AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+        manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+        manager.securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
+        manager.securityPolicy.allowInvalidCertificates = YES;
+        manager.securityPolicy.validatesDomainName=NO;
+        //请求
+        NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+        
+        [self shareInstance].downloadTask = [manager downloadTaskWithRequest:request progress:^(NSProgress * _Nonnull downloadProgress) {
 
+            NSLog(@"+++++%f",1.0 * downloadProgress.completedUnitCount / downloadProgress.totalUnitCount);
+            
+        } destination:^NSURL * _Nonnull(NSURL * _Nonnull targetPath, NSURLResponse * _Nonnull response) {
+            
+            NSString *cacheDirectory = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
+            NSString *watermelonDirectory = [cacheDirectory stringByAppendingPathComponent:verRemote.data.firstObject.packageName];
+            NSLog(@"==-=-=-=%@",watermelonDirectory);
+            
+            return [NSURL fileURLWithPath:watermelonDirectory];
+            
+        } completionHandler:^(NSURLResponse * _Nonnull response, NSURL * _Nullable filePath, NSError * _Nullable error) {
+            //设置下载完成操作
+            NSString *filePathString = [filePath path];
+            NSString *lastPath = [filePathString stringByDeletingPathExtension];
+            
+            NSFileManager *fileManager = [NSFileManager defaultManager];
+            [fileManager removeItemAtPath:lastPath error:nil];
+
+            
+            NSLog(@"======");
+            
+        }];
+        
+        //download
+        [[self shareInstance].downloadTask resume];
+        
+    }
+    
+    
+    
+}
 
 
 

@@ -43,4 +43,11 @@ static NSString  *WatermelonNotificationNewVersionFinded = @"cn.kyson.Notificati
  */
 +(void) installLocalPackage ;
 
+/**
+ * install remote package from ver.json
+ */
++(void) installRemotePackage ;
+
+
+
 @end
