@@ -21,7 +21,7 @@
                                            options:NSJSONReadingMutableContainers
                                              error:&error];
     if (error) {
-        NSLog(@"你妹，什么破 json: %@", jsonStr);
+        NSLog(@" json error: %@", jsonStr);
         return nil;
     }
     

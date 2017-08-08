@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		96B0DD071F3956B7000982EF /* WMBIOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B0DD061F3956B7000982EF /* WMBIOS.m */; };
 		D9CC76C72EF1EA4EC4C8B7F1 /* libPods-Watermelon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D749FAA53DFD515A82920CD /* libPods-Watermelon.a */; };
 		DEE8F0C71F38965900CE80A9 /* watermelon.zip in Resources */ = {isa = PBXBuildFile; fileRef = DEE8F0C61F38965900CE80A9 /* watermelon.zip */; };
 		DEE8F0CB1F38969E00CE80A9 /* WMVer.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE8F0CA1F38969E00CE80A9 /* WMVer.m */; };
@@ -27,6 +28,8 @@
 
 /* Begin PBXFileReference section */
 		148A6AA0DA7BC6369DC08DFC /* Pods-Watermelon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Watermelon.release.xcconfig"; path = "Pods/Target Support Files/Pods-Watermelon/Pods-Watermelon.release.xcconfig"; sourceTree = "<group>"; };
+		96B0DD051F3956B7000982EF /* WMBIOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMBIOS.h; sourceTree = "<group>"; };
+		96B0DD061F3956B7000982EF /* WMBIOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMBIOS.m; sourceTree = "<group>"; };
 		9D749FAA53DFD515A82920CD /* libPods-Watermelon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Watermelon.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD990F7B4803F0F3CE7DAA88 /* Pods-Watermelon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Watermelon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Watermelon/Pods-Watermelon.debug.xcconfig"; sourceTree = "<group>"; };
 		DEE8F0C61F38965900CE80A9 /* watermelon.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = watermelon.zip; sourceTree = "<group>"; };
@@ -107,6 +110,8 @@
 				DEE8F0D41F389B2B00CE80A9 /* WMEnvironmentConfigure.m */,
 				DEE8F0D61F38C09D00CE80A9 /* WMPackageManager.h */,
 				DEE8F0D71F38C09D00CE80A9 /* WMPackageManager.m */,
+				96B0DD051F3956B7000982EF /* WMBIOS.h */,
+				96B0DD061F3956B7000982EF /* WMBIOS.m */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -298,6 +303,7 @@
 				DEF8C1631F35514D00619822 /* ViewController.m in Sources */,
 				DEF8C1931F35564D00619822 /* WMWebViewController.m in Sources */,
 				DEE8F0CE1F38977500CE80A9 /* MDSModel.m in Sources */,
+				96B0DD071F3956B7000982EF /* WMBIOS.m in Sources */,
 				DEE8F0D21F389A6100CE80A9 /* WMJsonHandler.m in Sources */,
 				DEE8F0D51F389B2B00CE80A9 /* WMEnvironmentConfigure.m in Sources */,
 				DEF8C18D1F35542F00619822 /* Watermelon.m in Sources */,
