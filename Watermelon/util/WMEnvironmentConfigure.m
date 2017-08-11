@@ -18,7 +18,7 @@
 
 +(void)setVerJson:(NSString *)verJson {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults] ;
-    [userDefaults setObject:K_VERSION_JSON forKey:verJson];
+    [userDefaults setObject:verJson forKey:K_VERSION_JSON];
     [userDefaults synchronize];
 }
 

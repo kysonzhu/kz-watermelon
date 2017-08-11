@@ -68,13 +68,21 @@
             case WMBootModeBasicModule:{
                 if (![WMPackageManager isPackageExists]) {
                     [WMPackageManager installLocalPackage];
+                    //post notification
+                    [[NSNotificationCenter defaultCenter] postNotificationName:WatermelonNotificationModeSettingFinished object:nil];
                 }
                 
             }
                 break;
             case WMBootModeAllModule: {
                 [WMResourceCacheManager installCacheModule];
-                [WMPackageManager installRemotePackage];
+                
+                if (![WMPackageManager isPackageExists]) {
+                    [WMPackageManager installRemotePackageFinished:^{
+                        //post notification
+                        [[NSNotificationCenter defaultCenter] postNotificationName:WatermelonNotificationModeSettingFinished object:nil];
+                    }];
+                }
             }
                 
             default:
@@ -83,8 +91,7 @@
         
         _currentBootMode = bootMode;
         
-        //post notification
-        [[NSNotificationCenter defaultCenter] postNotificationName:WatermelonNotificationModeSettingFinished object:nil];
+        
         
     }];
 

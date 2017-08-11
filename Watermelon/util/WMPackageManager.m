@@ -23,9 +23,6 @@
 @interface WMPackageManager ()
 
 
-@property (nonatomic, strong) NSURLSessionDownloadTask *downloadTask;
-
-
 @end
 
 
@@ -114,32 +111,6 @@
 }
 
 
-
-
--(void)downloadPackageWithURL:(NSString *) packageURL {
-    if (!packageURL) {
-        return;
-    }
-    
-        //remote address
-        NSURL *URL = [NSURL URLWithString:packageURL];
-        //configure
-        NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-        
-        
-        AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
-        manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-        manager.securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
-        manager.securityPolicy.allowInvalidCertificates = YES;
-        manager.securityPolicy.validatesDomainName=NO;
-        //请求
-        NSURLRequest *request = [NSURLRequest requestWithURL:URL];
-        
-        
-}
-
-
-
 +(BOOL)isPackageExists {
     NSString *verJson = [WMEnvironmentConfigure verJson];
     if (verJson) {
@@ -178,7 +149,7 @@
     
 }
 
-+(void) installRemotePackage {
++(void) installRemotePackageFinished:(WatermelonDownloadFinished) finished {
     NSURL *verJsonURL = [NSURL URLWithString:URL_VER_JSON];
     NSError *error = nil;
     NSString *verJson = [NSString stringWithContentsOfURL:verJsonURL encoding:NSUTF8StringEncoding error:&error];
@@ -199,14 +170,15 @@
         //请求
         NSURLRequest *request = [NSURLRequest requestWithURL:URL];
         
-        [self shareInstance].downloadTask = [manager downloadTaskWithRequest:request progress:^(NSProgress * _Nonnull downloadProgress) {
+       
+        NSURLSessionDownloadTask *downloadTask = [manager downloadTaskWithRequest:request progress:^(NSProgress * _Nonnull downloadProgress) {
 
             NSLog(@"+++++%f",1.0 * downloadProgress.completedUnitCount / downloadProgress.totalUnitCount);
             
         } destination:^NSURL * _Nonnull(NSURL * _Nonnull targetPath, NSURLResponse * _Nonnull response) {
             
             NSString *cacheDirectory = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
-            NSString *watermelonDirectory = [cacheDirectory stringByAppendingPathComponent:verRemote.data.firstObject.packageName];
+            NSString *watermelonDirectory = [cacheDirectory stringByAppendingPathComponent:response.suggestedFilename];
             NSLog(@"==-=-=-=%@",watermelonDirectory);
             
             return [NSURL fileURLWithPath:watermelonDirectory];
@@ -214,18 +186,21 @@
         } completionHandler:^(NSURLResponse * _Nonnull response, NSURL * _Nullable filePath, NSError * _Nullable error) {
             //设置下载完成操作
             NSString *filePathString = [filePath path];
-            NSString *lastPath = [filePathString stringByDeletingPathExtension];
+            NSString *documentDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];;
             
-            NSFileManager *fileManager = [NSFileManager defaultManager];
-            [fileManager removeItemAtPath:lastPath error:nil];
-
+            
+            BOOL zipSuccess = [SSZipArchive unzipFileAtPath:filePathString toDestination:documentDirectory];
+            if (zipSuccess) {
+                [WMEnvironmentConfigure setVerJson:verJson];
+                finished();
+            }
             
             NSLog(@"======");
             
         }];
         
         //download
-        [[self shareInstance].downloadTask resume];
+        [downloadTask resume];
         
     }
     

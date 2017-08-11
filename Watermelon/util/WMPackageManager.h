@@ -14,6 +14,9 @@ static NSString  *WatermelonNotificationNewVersionFinded = @"cn.kyson.Notificati
 
 #define K_DEFAULT_PACKAGE_NAME @"dist"
 
+typedef void(^WatermelonDownloadFinished)(void);
+
+
 /**
  * Package Manager
  *  manage the download of package,update of package and so on
@@ -46,7 +49,7 @@ static NSString  *WatermelonNotificationNewVersionFinded = @"cn.kyson.Notificati
 /**
  * install remote package from ver.json
  */
-+(void) installRemotePackage ;
++(void) installRemotePackageFinished:(WatermelonDownloadFinished) finished;
 
 
 

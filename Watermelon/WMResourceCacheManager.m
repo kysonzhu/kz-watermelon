@@ -53,7 +53,7 @@
     NSString *urlPath = request.URL.path;
     if (urlPath.length > 0) {
         NSString *documentDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-        NSString *path = [documentDirectory stringByAppendingPathComponent:@""];
+        NSString *path = [documentDirectory stringByAppendingPathComponent:@"watermelon"];
         NSString *lastPath = [path stringByDeletingPathExtension];
         NSString *detailPath = [lastPath stringByAppendingString:urlPath];
         
