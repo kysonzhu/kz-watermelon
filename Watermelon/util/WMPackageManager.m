@@ -49,11 +49,7 @@
  */
 + (void) checkCurrentVersionIsLatest {
     
-    [[RealReachability sharedInstance] startNotifier];
-    
-    [[RealReachability sharedInstance] reachabilityWithBlock:^(ReachabilityStatus status) {
-        
-        switch (status) {
+        switch ([RealReachability sharedInstance].currentReachabilityStatus) {
             case RealStatusNotReachable:{
                 
             }
@@ -101,12 +97,6 @@
             default:
                 break;
         }
-        
-        
-    }];
-    
-    
-    
     
 }
 
@@ -179,17 +169,24 @@
             
             NSString *cacheDirectory = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
             NSString *watermelonDirectory = [cacheDirectory stringByAppendingPathComponent:response.suggestedFilename];
-            NSLog(@"==-=-=-=%@",watermelonDirectory);
+            
+            //remove old package
+            NSFileManager *fileManager = [NSFileManager defaultManager];
+            [fileManager removeItemAtPath:watermelonDirectory error:nil];
             
             return [NSURL fileURLWithPath:watermelonDirectory];
             
         } completionHandler:^(NSURLResponse * _Nonnull response, NSURL * _Nullable filePath, NSError * _Nullable error) {
-            //设置下载完成操作
+            //set download finish action
             NSString *filePathString = [filePath path];
-            NSString *documentDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];;
+            NSString *documentDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+            NSString *distPath = [documentDirectory stringByAppendingPathComponent:K_DEFAULT_PACKAGE_NAME];
+            //remove old package
+            NSFileManager *fileManager = [NSFileManager defaultManager];
+            [fileManager removeItemAtPath:distPath error:nil];
+
             
-            
-            BOOL zipSuccess = [SSZipArchive unzipFileAtPath:filePathString toDestination:documentDirectory];
+            BOOL zipSuccess = [SSZipArchive unzipFileAtPath:filePathString toDestination:distPath];
             if (zipSuccess) {
                 [WMEnvironmentConfigure setVerJson:verJson];
                 finished();

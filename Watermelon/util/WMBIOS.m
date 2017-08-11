@@ -28,8 +28,6 @@
 
 
 - (void) startFinishBasicMode:(BootModeSuccess) success {
-    [[RealReachability sharedInstance] startNotifier];
-    
     [[RealReachability sharedInstance] reachabilityWithBlock:^(ReachabilityStatus status) {
         
         switch (status) {

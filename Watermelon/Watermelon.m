@@ -13,7 +13,7 @@
 #import "WMEnvironmentConfigure.h"
 
 #import "WMVer.h"
-
+#import <RealReachability.h>
 
 
 @interface Watermelon ()
@@ -43,6 +43,7 @@
 {
     self = [super init];
     if (self) {
+        [[RealReachability sharedInstance] startNotifier];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(latestVersionFound:) name:WatermelonNotificationNewVersionFinded object:nil];
     }
     return self;
@@ -76,11 +77,13 @@
                 break;
             case WMBootModeAllModule: {
                 [WMResourceCacheManager installCacheModule];
+                [WMPackageManager checkCurrentVersionIsLatest];
                 
                 if (![WMPackageManager isPackageExists]) {
                     [WMPackageManager installRemotePackageFinished:^{
                         //post notification
                         [[NSNotificationCenter defaultCenter] postNotificationName:WatermelonNotificationModeSettingFinished object:nil];
+                        
                     }];
                 }
             }
@@ -104,8 +107,12 @@
     WMVer *verRemote = [[WMVer alloc] init];
     [verRemote loadPropertiesWithData:notificationObj];
     
-    
 
+    [WMPackageManager installRemotePackageFinished:^{
+        //post notification
+        [[NSNotificationCenter defaultCenter] postNotificationName:WatermelonNotificationModeSettingFinished object:nil];
+        
+    }];
     
 }
 

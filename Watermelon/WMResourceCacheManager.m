@@ -73,21 +73,7 @@
                 
             }
         }
-        
-        
-        
-        
-        
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     return [super cachedResponseForRequest:request];
 }
