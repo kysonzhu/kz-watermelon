@@ -147,6 +147,28 @@
     
 }
 
++(void) installPackageWithZipPath:(NSString *) zipPath {
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if (![fileManager fileExistsAtPath:zipPath]) {
+        return;
+    }
+
+    NSString *documentDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    NSString *distPath = [documentDirectory stringByAppendingPathComponent:K_DEFAULT_PACKAGE_NAME];
+    //remove old package
+    [fileManager removeItemAtPath:distPath error:nil];
+
+    BOOL zipSuccess = [SSZipArchive unzipFileAtPath:zipPath toDestination:distPath];
+    if (zipSuccess) {
+        NSString *pathOfVerJson = [distPath stringByAppendingString:@"/ver.json"];
+        NSString *verJson = [NSString stringWithContentsOfFile:pathOfVerJson encoding:NSUTF8StringEncoding error:nil];
+        [WMEnvironmentConfigure setVerJson:verJson];
+    }else {
+        
+    }
+}
+
+
 +(void) installRemotePackageSuccess:(WatermelonDownloadSuccess)success failed:(WatermelonDownloadFailed)failed{
     NSURL *verJsonURL = [NSURL URLWithString:URL_VER_JSON];
     NSError *error = nil;
@@ -186,20 +208,18 @@
             
         } completionHandler:^(NSURLResponse * _Nonnull response, NSURL * _Nullable filePath, NSError * _Nullable error) {
             //set download finish action
-            NSString *filePathString = [filePath path];
-            NSString *documentDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-            NSString *distPath = [documentDirectory stringByAppendingPathComponent:K_DEFAULT_PACKAGE_NAME];
-            //remove old package
-            NSFileManager *fileManager = [NSFileManager defaultManager];
-            [fileManager removeItemAtPath:distPath error:nil];
-
             
-            BOOL zipSuccess = [SSZipArchive unzipFileAtPath:filePathString toDestination:distPath];
-            if (zipSuccess) {
-                [WMEnvironmentConfigure setVerJson:verJson];
-                success();
-            }else {
-                failed();
+            NSString *filePathString = [filePath path];
+            //set directory
+            NSString *cacheDirectory = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
+            NSString *watermelonDirectory = [cacheDirectory stringByAppendingPathComponent:response.suggestedFilename];
+            NSString *path = [watermelonDirectory stringByAppendingString:@"/ver.json"];
+            [verJson writeToFile:path atomically:YES encoding:NSUTF8StringEncoding error:nil];
+            
+            if (error) {
+                failed(error);
+            } else {
+                success(filePathString);
             }
             
             NSLog(@"======");

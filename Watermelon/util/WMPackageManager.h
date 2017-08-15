@@ -14,8 +14,8 @@ static NSString  *WatermelonNotificationNewVersionFinded = @"cn.kyson.Notificati
 
 #define K_DEFAULT_PACKAGE_NAME @"dist"
 
-typedef void(^WatermelonDownloadSuccess)(void);
-typedef void(^WatermelonDownloadFailed)(void);
+typedef void(^WatermelonDownloadSuccess)(NSString *zipPath);
+typedef void(^WatermelonDownloadFailed)(NSError *error);
 
 
 /**
@@ -51,6 +51,9 @@ typedef void(^WatermelonDownloadFailed)(void);
  */
 +(void) installRemotePackageSuccess:(WatermelonDownloadSuccess) success failed:(WatermelonDownloadFailed) failed;
 
-
+/**
+ * install package via local zip package
+ */
++(void) installPackageWithZipPath:(NSString *) zipPath ;
 
 @end
