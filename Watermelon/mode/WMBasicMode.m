@@ -8,6 +8,27 @@
 
 #import "WMBasicMode.h"
 
+#import "WMPackageManager.h"
+
+#import "Watermelon.h"
+
 @implementation WMBasicMode
+
+-(void)start {
+    
+    if (![WMPackageManager isPackageExists]) {
+        [WMPackageManager installLocalPackage];
+        //post notification
+        [[NSNotificationCenter defaultCenter] postNotificationName:WatermelonNotificationModeSettingFinished object:nil];
+    }
+}
+
+
+-(void)stop {
+    
+    
+}
+
+
 
 @end

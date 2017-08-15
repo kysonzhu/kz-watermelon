@@ -15,6 +15,7 @@
 
 #import "WMVer.h"
 #import <RealReachability.h>
+#import "WMBIOS.h"
 
 
 @interface Watermelon ()
@@ -68,37 +69,8 @@
      * start basic input and out put system
      */
     [[WMBIOS shareInstance] startFinishBasicMode:^(WMBootMode bootMode) {
-        
-        switch (bootMode) {
-            case WMBootModeBasicModule:{
-                if (![WMPackageManager isPackageExists]) {
-                    [WMPackageManager installLocalPackage];
-                    //post notification
-                    [[NSNotificationCenter defaultCenter] postNotificationName:WatermelonNotificationModeSettingFinished object:nil];
-                }
-                
-            }
-                break;
-            case WMBootModeAllModule: {
-                [WMResourceCacheManager installCacheModule];
-                [WMPackageManager checkCurrentVersionIsLatest];
-                
-                if (![WMPackageManager isPackageExists]) {
-                    [WMPackageManager installRemotePackageFinished:^{
-                        //post notification
-                        [[NSNotificationCenter defaultCenter] postNotificationName:WatermelonNotificationModeSettingFinished object:nil];
-                        
-                    }];
-                }
-            }
-                
-            default:
-                break;
-        }
-        
-        _currentBootMode = bootMode;
-        
-        
+        [[WMBIOS shareInstance] switchToMode:bootMode];
+        _currentBootMode = bootMode;        
         
     }];
 

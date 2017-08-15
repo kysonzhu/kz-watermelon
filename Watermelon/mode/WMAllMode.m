@@ -8,6 +8,34 @@
 
 #import "WMAllMode.h"
 
+#import "WMResourceCacheManager.h"
+
+#import "WMPackageManager.h"
+
+#import "Watermelon.h"
+
 @implementation WMAllMode
+
+
+-(void)start {
+    
+    [WMResourceCacheManager installCacheModule];
+    [WMPackageManager checkCurrentVersionIsLatest];
+    
+    if (![WMPackageManager isPackageExists]) {
+        [WMPackageManager installRemotePackageFinished:^{
+            //post notification
+            [[NSNotificationCenter defaultCenter] postNotificationName:WatermelonNotificationModeSettingFinished object:nil];
+            
+        }];
+    }
+}
+
+
+
+-(void)stop {
+    
+}
+
 
 @end
