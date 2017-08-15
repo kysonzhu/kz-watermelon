@@ -22,7 +22,7 @@
 
 @interface WMPackageManager ()
 
-@property (nonatomic, assign) BOOL hasStopCheckVersion;
+@property (nonatomic, assign) float timeInterval;
 
 @end
 
@@ -43,15 +43,10 @@
     return sharedInstance;
 }
 
-
-
 /**
  * Judge if the package version is latest
  */
 + (void) checkCurrentVersionIsLatest {
-    if ([self shareInstance].hasStopCheckVersion) {
-        return;
-    }
     
         switch ([RealReachability sharedInstance].currentReachabilityStatus) {
             case RealStatusNotReachable:{
@@ -77,22 +72,6 @@
                     }
                     
                     
-                    
-                    
-                    /////////////////////////////////////
-                    /**
-                     * after get info ,must check again
-                     */
-                    NSTimer* timer = [NSTimer timerWithTimeInterval:(60.f *5) repeats:YES block:^(NSTimer * _Nonnull timer) {
-                        //invalidate if after using
-                        [timer invalidate];
-
-                        [self checkCurrentVersionIsLatest];
-                        
-                    }];
-                    
-                    [[NSRunLoop mainRunLoop]addTimer:timer forMode:NSDefaultRunLoopMode];
-                    /////////////////////////////////////
                 }
                 
             }
@@ -104,9 +83,30 @@
     
 }
 
-+ (void) stopCheckCurrentVersionIsLatest {
-    [self shareInstance].hasStopCheckVersion = YES;
+
+
++(void)checkCurrentVersionIsLatestContinuous:(BOOL)continuous {
+    
+    [self checkCurrentVersionIsLatest];
+    
+    NSTimeInterval timeInterval = continuous ? 20 : (60.f * 1000) ;
+    
+    /////////////////////////////////////
+    /**
+     * after get info ,must check again
+     */
+    NSTimer *tempTimer = [NSTimer timerWithTimeInterval:timeInterval repeats:YES block:^(NSTimer * _Nonnull timer) {
+        //invalidate if after using
+        [timer invalidate];
+        
+        [self checkCurrentVersionIsLatestContinuous:continuous];
+        
+    }];
+    
+    [[NSRunLoop mainRunLoop]addTimer:tempTimer forMode:NSDefaultRunLoopMode];
+    /////////////////////////////////////
 }
+
 
 
 +(BOOL)isPackageExists {

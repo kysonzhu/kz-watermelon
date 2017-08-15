@@ -18,25 +18,27 @@
 
 
 +(void)start {
-    
+    //setup watermelon
     [WMResourceCacheManager installCacheModule];
-    [WMPackageManager checkCurrentVersionIsLatest];
+    [WMPackageManager checkCurrentVersionIsLatestContinuous:YES];
     
-    if (![WMPackageManager isPackageExists]) {
-        [WMPackageManager installRemotePackageFinished:^{
-            //post notification
-            [[NSNotificationCenter defaultCenter] postNotificationName:WatermelonNotificationModeSettingFinished object:nil];
-            
-        }];
-    }
+    [WMPackageManager installRemotePackageSuccess:^(NSString *zipPath) {
+        
+        [WMPackageManager installPackageWithZipPath:zipPath];
+        
+        [[WMBIOS shareInstance] switchToModeType:WMBootModeTypeAllModule];
+        [[NSNotificationCenter defaultCenter] postNotificationName:WatermelonNotificationModeSettingFinished object:nil];
+        
+    } failed:^(NSError *error) {
+        
+    }];
 }
 
 
 
 +(void)stop {
     [WMResourceCacheManager removeCacheModule];
-    [WMPackageManager stopCheckCurrentVersionIsLatest];
-
+    [WMPackageManager checkCurrentVersionIsLatestContinuous:NO];
 }
 
 

@@ -26,14 +26,9 @@ typedef void(^WatermelonDownloadFailed)(NSError *error);
 @interface WMPackageManager : NSObject
 
 /**
- * check if the version is latest
+ * reset
  */
-+ (void) checkCurrentVersionIsLatest ;
-
-/**
- * uncheck
- */
-+ (void) stopCheckCurrentVersionIsLatest ;
++ (void) checkCurrentVersionIsLatestContinuous:(BOOL) continuous ;
 
 /**
  * the package in document direcory exists or not
