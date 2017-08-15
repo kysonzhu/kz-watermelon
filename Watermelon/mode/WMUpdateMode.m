@@ -8,10 +8,15 @@
 
 #import "WMUpdateMode.h"
 
+#import "Watermelon.h"
+
 @implementation WMUpdateMode
 
 +(void)start {
     
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:WatermelonNotificationModeSettingFinished object:nil];
+
 }
 
 
