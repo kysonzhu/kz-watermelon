@@ -22,9 +22,14 @@
     [WMResourceCacheManager installCacheModule];
     [WMPackageManager checkCurrentVersionIsLatestContinuous:YES];
     
-    [WMPackageManager installRemotePackageSuccess:^(NSString *zipPath) {
+    if ([WMPackageManager isPackageExists]) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:WatermelonNotificationModeSettingFinished object:nil];
+        return;
+    }
+    
+    [WMPackageManager downloadRemotePackageSuccess:^(NSString *zipPath) {
         
-        [WMPackageManager installPackageWithZipPath:zipPath];
+        [WMPackageManager installPackageWithDefaultDownloadPath];
         
         [[NSNotificationCenter defaultCenter] postNotificationName:WatermelonNotificationModeSettingFinished object:nil];
         

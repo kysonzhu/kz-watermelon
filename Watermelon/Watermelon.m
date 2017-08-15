@@ -84,14 +84,8 @@
     [verRemote loadPropertiesWithData:notificationObj];
     
 
-    [WMPackageManager installRemotePackageSuccess:^(NSString *zipPath) {
+    [WMPackageManager downloadRemotePackageSuccess:^(NSString *zipPath) {
         [[WMBIOS shareInstance] switchToModeType:WMBootModeTypeUpdateModule];
-        
-        [WMPackageManager installPackageWithZipPath:zipPath];
-        
-        [[WMBIOS shareInstance] switchToModeType:WMBootModeTypeAllModule];
-        [[NSNotificationCenter defaultCenter] postNotificationName:WatermelonNotificationModeSettingFinished object:nil];
-
 
     } failed:^(NSError *error) {
         

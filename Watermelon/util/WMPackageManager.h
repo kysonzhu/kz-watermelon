@@ -44,11 +44,11 @@ typedef void(^WatermelonDownloadFailed)(NSError *error);
 /**
  * install remote package from ver.json
  */
-+(void) installRemotePackageSuccess:(WatermelonDownloadSuccess) success failed:(WatermelonDownloadFailed) failed;
++(void) downloadRemotePackageSuccess:(WatermelonDownloadSuccess) success failed:(WatermelonDownloadFailed) failed;
 
 /**
  * install package via local zip package
  */
-+(void) installPackageWithZipPath:(NSString *) zipPath ;
++(void) installPackageWithDefaultDownloadPath ;
 
 @end

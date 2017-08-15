@@ -24,6 +24,8 @@
 
 @property (nonatomic, assign) float timeInterval;
 
+@property (nonatomic, copy) NSString *defaultDownloadPath;
+
 @end
 
 
@@ -116,9 +118,9 @@
         NSString *packageName = ver.data.firstObject.packageName;
         if (packageName.length > 0) {
             NSString *documentDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-            NSString *path = [documentDirectory stringByAppendingPathComponent:packageName];
+            NSString *distPath = [documentDirectory stringByAppendingPathComponent:K_DEFAULT_PACKAGE_NAME];
             
-            BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:path];
+            BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:distPath];
             
             return fileExists;
             
@@ -147,9 +149,13 @@
     
 }
 
-+(void) installPackageWithZipPath:(NSString *) zipPath {
++(void) installPackageWithDefaultDownloadPath{
+    NSString *defaultDownloadPath = [WMPackageManager shareInstance].defaultDownloadPath;
+    if (defaultDownloadPath.length < 1) {
+        return;
+    }
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    if (![fileManager fileExistsAtPath:zipPath]) {
+    if (![fileManager fileExistsAtPath:defaultDownloadPath]) {
         return;
     }
 
@@ -158,19 +164,19 @@
     //remove old package
     [fileManager removeItemAtPath:distPath error:nil];
 
-    BOOL zipSuccess = [SSZipArchive unzipFileAtPath:zipPath toDestination:distPath];
+    BOOL zipSuccess = [SSZipArchive unzipFileAtPath:defaultDownloadPath toDestination:distPath];
     if (zipSuccess) {
         NSString *cacheDirectory = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
         NSString *pathOfVerJson = [cacheDirectory stringByAppendingString:@"/ver.json"];
         NSString *verJson = [NSString stringWithContentsOfFile:pathOfVerJson encoding:NSUTF8StringEncoding error:nil];
         [WMEnvironmentConfigure setVerJson:verJson];
     }else {
-        
+        [WMEnvironmentConfigure setVerJson:nil];
     }
 }
 
 
-+(void) installRemotePackageSuccess:(WatermelonDownloadSuccess)success failed:(WatermelonDownloadFailed)failed{
++(void) downloadRemotePackageSuccess:(WatermelonDownloadSuccess)success failed:(WatermelonDownloadFailed)failed{
     NSURL *verJsonURL = [NSURL URLWithString:URL_VER_JSON];
     NSError *error = nil;
     NSString *verJson = [NSString stringWithContentsOfURL:verJsonURL encoding:NSUTF8StringEncoding error:&error];
@@ -223,6 +229,7 @@
             if (error) {
                 failed(error);
             } else {
+                [WMPackageManager shareInstance].defaultDownloadPath = filePathString;
                 success(filePathString);
             }
             
@@ -234,9 +241,6 @@
         [downloadTask resume];
         
     }
-    
-    
-    
 }
 
 
