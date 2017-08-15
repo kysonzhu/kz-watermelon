@@ -33,7 +33,16 @@ typedef void(^BootModeSuccess)(WMBootMode bootMode);
 +(WMBIOS *) shareInstance ;
 
 
-
+/**
+ * start BIOS and basic mode finished
+ */
 - (void) startFinishBasicMode:(BootModeSuccess) success;
+
+
+/**
+ * switch mode to specific mode
+ */
+-(void)switchToMode:(WMBootMode) mode;
+
 
 @end

@@ -10,6 +10,13 @@
 #import <RealReachability.h>
 
 
+@interface WMBIOS ()
+
+@property (nonatomic, assign) WMBootMode currentMode;
+
+@end
+
+
 
 @implementation WMBIOS
 
@@ -44,10 +51,20 @@
             default:
                 break;
         }
+        self.currentMode = status;
 
     }];
     
 }
+
+
+-(void)switchToMode:(WMBootMode) mode {
+    
+    
+    
+}
+
+
 
 
 @end

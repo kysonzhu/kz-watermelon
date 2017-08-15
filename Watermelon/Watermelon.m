@@ -7,6 +7,7 @@
 //
 
 #import "Watermelon.h"
+#import <UIKit/UIKit.h>
 
 #import "WMResourceCacheManager.h"
 #import "WMPackageManager.h"
@@ -52,8 +53,11 @@
 
 +(void) registeWatermelonService{
     
+    //start web thread
+    UIWebView *webPool = [[UIWebView alloc]initWithFrame:CGRectZero];
+    [webPool loadHTMLString:@"" baseURL:nil];
+    //register
     [[self shareInstance] registService];
-    
     
 }
 
