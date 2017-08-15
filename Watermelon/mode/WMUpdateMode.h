@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "WMModeProtocol.h"
 
-@interface WMUpdateMode : NSObject
+
+
+@interface WMUpdateMode : NSObject<WMModeProtocol>
 
 @end

@@ -39,6 +39,7 @@
 		96C2C6551F428DB300AFA21B /* WMUpdateMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMUpdateMode.m; sourceTree = "<group>"; };
 		96C2C6571F428DEB00AFA21B /* WMAllMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMAllMode.h; sourceTree = "<group>"; };
 		96C2C6581F428DEB00AFA21B /* WMAllMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMAllMode.m; sourceTree = "<group>"; };
+		96C2C65A1F42918300AFA21B /* WMModeProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WMModeProtocol.h; sourceTree = "<group>"; };
 		9D749FAA53DFD515A82920CD /* libPods-Watermelon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Watermelon.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD990F7B4803F0F3CE7DAA88 /* Pods-Watermelon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Watermelon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Watermelon/Pods-Watermelon.debug.xcconfig"; sourceTree = "<group>"; };
 		DEE8F0C61F38965900CE80A9 /* watermelon.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = watermelon.zip; sourceTree = "<group>"; };
@@ -100,6 +101,7 @@
 				96C2C6551F428DB300AFA21B /* WMUpdateMode.m */,
 				96C2C6571F428DEB00AFA21B /* WMAllMode.h */,
 				96C2C6581F428DEB00AFA21B /* WMAllMode.m */,
+				96C2C65A1F42918300AFA21B /* WMModeProtocol.h */,
 			);
 			path = mode;
 			sourceTree = "<group>";

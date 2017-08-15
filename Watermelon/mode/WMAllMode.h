@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface WMAllMode : NSObject
+#import "WMModeProtocol.h"
+
+
+@interface WMAllMode : NSObject<WMModeProtocol>
 
 @end
