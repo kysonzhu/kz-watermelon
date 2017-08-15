@@ -160,7 +160,8 @@
 
     BOOL zipSuccess = [SSZipArchive unzipFileAtPath:zipPath toDestination:distPath];
     if (zipSuccess) {
-        NSString *pathOfVerJson = [distPath stringByAppendingString:@"/ver.json"];
+        NSString *cacheDirectory = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
+        NSString *pathOfVerJson = [cacheDirectory stringByAppendingString:@"/ver.json"];
         NSString *verJson = [NSString stringWithContentsOfFile:pathOfVerJson encoding:NSUTF8StringEncoding error:nil];
         [WMEnvironmentConfigure setVerJson:verJson];
     }else {
@@ -212,8 +213,11 @@
             NSString *filePathString = [filePath path];
             //set directory
             NSString *cacheDirectory = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
-            NSString *watermelonDirectory = [cacheDirectory stringByAppendingPathComponent:response.suggestedFilename];
-            NSString *path = [watermelonDirectory stringByAppendingString:@"/ver.json"];
+            NSString *path = [cacheDirectory stringByAppendingString:@"/ver.json"];
+            //remove old package
+            NSFileManager *fileManager = [NSFileManager defaultManager];
+            [fileManager removeItemAtPath:path error:nil];
+            
             [verJson writeToFile:path atomically:YES encoding:NSUTF8StringEncoding error:nil];
             
             if (error) {

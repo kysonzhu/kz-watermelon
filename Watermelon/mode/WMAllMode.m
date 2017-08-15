@@ -26,7 +26,6 @@
         
         [WMPackageManager installPackageWithZipPath:zipPath];
         
-        [[WMBIOS shareInstance] switchToModeType:WMBootModeTypeAllModule];
         [[NSNotificationCenter defaultCenter] postNotificationName:WatermelonNotificationModeSettingFinished object:nil];
         
     } failed:^(NSError *error) {
