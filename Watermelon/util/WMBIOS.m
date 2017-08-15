@@ -7,12 +7,19 @@
 //
 
 #import "WMBIOS.h"
+
+#import "WMModeProtocol.h"
+
 #import <RealReachability.h>
+
+#import "WMBasicMode.h"
+#import "WMUpdateMode.h"
+#import "WMAllMode.h"
 
 
 @interface WMBIOS ()
 
-@property (nonatomic, assign) WMBootMode currentMode;
+@property (nonatomic, assign) id<WMModeProtocol> currentMode;
 
 @end
 
@@ -40,28 +47,42 @@
         switch (status) {
             case RealStatusNotReachable:{
                 //network can not be reachable, so basic module is ok
-                success(WMBootModeBasicModule);
+                success(WMBootModeTypeBasicModule);
             }
                 break;
             case RealStatusViaWWAN:
             case RealStatusViaWiFi:{
-                success(WMBootModeAllModule);
+                success(WMBootModeTypeAllModule);
             }
                 break;
             default:
                 break;
         }
-        self.currentMode = status;
 
     }];
     
 }
 
 
--(void)switchToMode:(WMBootMode) mode {
+-(void)switchToMode:(WMBootModeType) modeType {
     
-    
-    
+    switch (modeType) {
+        case WMBootModeTypeBasicModule: {
+            [WMBasicMode start];
+        }
+            break;
+        case WMBootModeTypeAllModule: {
+            [WMAllMode start];
+        }
+            break;
+        case WMBootModeTypeUpdateModule: {
+            [WMUpdateMode start];
+        }
+            break;
+            
+        default:
+            break;
+    }
 }
 
 

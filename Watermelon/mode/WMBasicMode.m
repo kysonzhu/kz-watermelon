@@ -14,7 +14,7 @@
 
 @implementation WMBasicMode
 
--(void)start {
++(void)start {
     
     if (![WMPackageManager isPackageExists]) {
         [WMPackageManager installLocalPackage];
@@ -24,7 +24,7 @@
 }
 
 
--(void)stop {
++(void)stop {
     
     
 }

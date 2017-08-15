@@ -17,7 +17,7 @@
 @implementation WMAllMode
 
 
--(void)start {
++(void)start {
     
     [WMResourceCacheManager installCacheModule];
     [WMPackageManager checkCurrentVersionIsLatest];
@@ -33,7 +33,7 @@
 
 
 
--(void)stop {
++(void)stop {
     
 }
 

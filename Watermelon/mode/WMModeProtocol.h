@@ -15,14 +15,14 @@
 /**
  * start
  */
--(void) start ;
+ +(void) start ;
 
 
 /**
  * stop
  */
 
--(void) stop ;
++(void) stop ;
 
 
 

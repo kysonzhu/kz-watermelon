@@ -11,12 +11,12 @@
 
 ///枚举：logo位置
 typedef enum {
-    WMBootModeBasicModule = 0, //Basic module,including local package but no url cache system
-    WMBootModeUpdateModule,   // Update model,no using local package and url cache system but has network
-    WMBootModeAllModule      //All in,including local package,url cache,network
-} WMBootMode;
+    WMBootModeTypeBasicModule = 0, //Basic module,including local package but no url cache system
+    WMBootModeTypeUpdateModule,   // Update model,no using local package and url cache system but has network
+    WMBootModeTypeAllModule      //All in,including local package,url cache,network
+} WMBootModeType;
 
-typedef void(^BootModeSuccess)(WMBootMode bootMode);
+typedef void(^BootModeSuccess)(WMBootModeType bootModeType);
 
 /**
  * Like PC BIOS,this class provide self-inspection of system
@@ -42,7 +42,7 @@ typedef void(^BootModeSuccess)(WMBootMode bootMode);
 /**
  * switch mode to specific mode
  */
--(void)switchToMode:(WMBootMode) mode;
+-(void)switchToMode:(WMBootModeType) modeType;
 
 
 @end

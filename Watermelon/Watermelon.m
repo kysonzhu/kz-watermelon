@@ -68,9 +68,9 @@
     /**
      * start basic input and out put system
      */
-    [[WMBIOS shareInstance] startFinishBasicMode:^(WMBootMode bootMode) {
-        [[WMBIOS shareInstance] switchToMode:bootMode];
-        _currentBootMode = bootMode;        
+    [[WMBIOS shareInstance] startFinishBasicMode:^(WMBootModeType bootModeType) {
+        [[WMBIOS shareInstance] switchToMode:bootModeType];
+        _currentBootModeType = bootModeType;
         
     }];
 

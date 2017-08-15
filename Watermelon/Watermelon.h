@@ -20,7 +20,7 @@ static NSString  *WatermelonNotificationModeSettingFinished = @"cn.kyson.Notific
 /**
  * current boot mode
  */
-@property (nonatomic, readonly) WMBootMode currentBootMode;
+@property (nonatomic, readonly) WMBootModeType currentBootModeType;
 
 +(Watermelon *) shareInstance ;
 

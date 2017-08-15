@@ -10,4 +10,13 @@
 
 @implementation WMUpdateMode
 
++(void)start {
+    
+}
+
+
++(void)stop {
+    
+}
+
 @end

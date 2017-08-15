@@ -44,8 +44,8 @@
 }
 
 -(void) loadWebViewRequest {
-    switch ([Watermelon shareInstance].currentBootMode) {
-        case WMBootModeBasicModule: {
+    switch ([Watermelon shareInstance].currentBootModeType) {
+        case WMBootModeTypeBasicModule: {
             NSString *documentDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
             NSString *distPath = [documentDirectory stringByAppendingPathComponent:K_DEFAULT_PACKAGE_NAME];
             NSString *packageURLString = [distPath stringByAppendingFormat:@"/watermelon/index.html"];
@@ -56,7 +56,7 @@
             
         }
             break;
-        case WMBootModeAllModule: {
+        case WMBootModeTypeAllModule: {
             
         }
             break;
