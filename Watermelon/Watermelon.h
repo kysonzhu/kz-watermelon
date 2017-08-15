@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #import "WMBIOS.h"
+#import "WMModeProtocol.h"
 
 
 static NSString  *WatermelonNotificationModeSettingFinished = @"cn.kyson.Notification.WatermelonNotificationModeSettingFinished";
@@ -30,8 +31,6 @@ static NSString  *WatermelonNotificationModeSettingFinished = @"cn.kyson.Notific
  * register service
  */
 +(void) registeWatermelonService;
-
-
 
 
 

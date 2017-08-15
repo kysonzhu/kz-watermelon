@@ -31,6 +31,15 @@
     [NSURLCache setSharedURLCache:cacheManager];
 }
 
++(void)removeCacheModule {
+    WMResourceCacheManager *cacheManager = [[WMResourceCacheManager alloc] initWithMemoryCapacity:0 diskCapacity:0 diskPath:nil];
+    cacheManager.cachedResponsesDictionary = nil;
+    [NSURLCache setSharedURLCache:cacheManager];
+    
+    [[NSURLCache sharedURLCache] removeAllCachedResponses];
+
+}
+
 
 - (nullable NSCachedURLResponse *)cachedResponseForRequest:(NSURLRequest *)request {
     

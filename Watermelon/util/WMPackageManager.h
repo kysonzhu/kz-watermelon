@@ -14,7 +14,8 @@ static NSString  *WatermelonNotificationNewVersionFinded = @"cn.kyson.Notificati
 
 #define K_DEFAULT_PACKAGE_NAME @"dist"
 
-typedef void(^WatermelonDownloadFinished)(void);
+typedef void(^WatermelonDownloadSuccess)(void);
+typedef void(^WatermelonDownloadFailed)(void);
 
 
 /**
@@ -25,15 +26,14 @@ typedef void(^WatermelonDownloadFinished)(void);
 @interface WMPackageManager : NSObject
 
 /**
- * download Package with URL
- */
--(void)downloadPackageWithURL:(NSString *) packageURL ;
-
-
-/**
  * check if the version is latest
  */
 + (void) checkCurrentVersionIsLatest ;
+
+/**
+ * uncheck
+ */
++ (void) stopCheckCurrentVersionIsLatest ;
 
 /**
  * the package in document direcory exists or not
@@ -49,7 +49,7 @@ typedef void(^WatermelonDownloadFinished)(void);
 /**
  * install remote package from ver.json
  */
-+(void) installRemotePackageFinished:(WatermelonDownloadFinished) finished;
++(void) installRemotePackageSuccess:(WatermelonDownloadSuccess) success failed:(WatermelonDownloadFailed) failed;
 
 
 

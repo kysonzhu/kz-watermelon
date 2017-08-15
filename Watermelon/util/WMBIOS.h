@@ -36,13 +36,13 @@ typedef void(^BootModeSuccess)(WMBootModeType bootModeType);
 /**
  * start BIOS and basic mode finished
  */
-- (void) startFinishBasicMode:(BootModeSuccess) success;
+- (void) startBasicModeFinished:(BootModeSuccess) success;
 
 
 /**
  * switch mode to specific mode
  */
--(void)switchToMode:(WMBootModeType) modeType;
+-(void)switchToModeType:(WMBootModeType) modeType;
 
 
 @end

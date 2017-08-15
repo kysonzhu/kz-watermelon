@@ -41,7 +41,7 @@
 }
 
 
-- (void) startFinishBasicMode:(BootModeSuccess) success {
+- (void) startBasicModeFinished:(BootModeSuccess) success {
     [[RealReachability sharedInstance] reachabilityWithBlock:^(ReachabilityStatus status) {
         
         switch (status) {
@@ -64,18 +64,28 @@
 }
 
 
--(void)switchToMode:(WMBootModeType) modeType {
+-(void)switchToModeType:(WMBootModeType) modeType {
     
     switch (modeType) {
         case WMBootModeTypeBasicModule: {
+            [WMAllMode stop];
+            [WMUpdateMode stop];
+
             [WMBasicMode start];
         }
             break;
         case WMBootModeTypeAllModule: {
+            [WMBasicMode stop];
+            [WMUpdateMode stop];
+
+            
             [WMAllMode start];
         }
             break;
         case WMBootModeTypeUpdateModule: {
+            [WMAllMode stop];
+            [WMBasicMode stop];
+            
             [WMUpdateMode start];
         }
             break;

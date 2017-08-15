@@ -34,7 +34,9 @@
 
 
 +(void)stop {
-    
+    [WMResourceCacheManager removeCacheModule];
+    [WMPackageManager stopCheckCurrentVersionIsLatest];
+
 }
 
 

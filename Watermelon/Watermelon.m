@@ -68,8 +68,8 @@
     /**
      * start basic input and out put system
      */
-    [[WMBIOS shareInstance] startFinishBasicMode:^(WMBootModeType bootModeType) {
-        [[WMBIOS shareInstance] switchToMode:bootModeType];
+    [[WMBIOS shareInstance] startBasicModeFinished:^(WMBootModeType bootModeType) {
+        [[WMBIOS shareInstance] switchToModeType:bootModeType];
         _currentBootModeType = bootModeType;
         
     }];
@@ -84,10 +84,12 @@
     [verRemote loadPropertiesWithData:notificationObj];
     
 
-    [WMPackageManager installRemotePackageFinished:^{
+    [WMPackageManager installRemotePackageSuccess:^{
         //post notification
         [[NSNotificationCenter defaultCenter] postNotificationName:WatermelonNotificationModeSettingFinished object:nil];
         
+    } failed:^{
+        ;
     }];
     
 }

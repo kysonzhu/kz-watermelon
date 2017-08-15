@@ -17,4 +17,5 @@
 + (void) installCacheModule;
 
 
++(void)removeCacheModule ;
 @end

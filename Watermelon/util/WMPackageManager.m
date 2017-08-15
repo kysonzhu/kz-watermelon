@@ -22,6 +22,7 @@
 
 @interface WMPackageManager ()
 
+@property (nonatomic, assign) BOOL hasStopCheckVersion;
 
 @end
 
@@ -48,6 +49,9 @@
  * Judge if the package version is latest
  */
 + (void) checkCurrentVersionIsLatest {
+    if ([self shareInstance].hasStopCheckVersion) {
+        return;
+    }
     
         switch ([RealReachability sharedInstance].currentReachabilityStatus) {
             case RealStatusNotReachable:{
@@ -79,7 +83,7 @@
                     /**
                      * after get info ,must check again
                      */
-                    NSTimer* timer = [NSTimer timerWithTimeInterval:5.f repeats:YES block:^(NSTimer * _Nonnull timer) {
+                    NSTimer* timer = [NSTimer timerWithTimeInterval:(60.f *5) repeats:YES block:^(NSTimer * _Nonnull timer) {
                         //invalidate if after using
                         [timer invalidate];
 
@@ -98,6 +102,10 @@
                 break;
         }
     
+}
+
++ (void) stopCheckCurrentVersionIsLatest {
+    [self shareInstance].hasStopCheckVersion = YES;
 }
 
 
@@ -139,7 +147,7 @@
     
 }
 
-+(void) installRemotePackageFinished:(WatermelonDownloadFinished) finished {
++(void) installRemotePackageSuccess:(WatermelonDownloadSuccess)success failed:(WatermelonDownloadFailed)failed{
     NSURL *verJsonURL = [NSURL URLWithString:URL_VER_JSON];
     NSError *error = nil;
     NSString *verJson = [NSString stringWithContentsOfURL:verJsonURL encoding:NSUTF8StringEncoding error:&error];
@@ -189,7 +197,9 @@
             BOOL zipSuccess = [SSZipArchive unzipFileAtPath:filePathString toDestination:distPath];
             if (zipSuccess) {
                 [WMEnvironmentConfigure setVerJson:verJson];
-                finished();
+                success();
+            }else {
+                failed();
             }
             
             NSLog(@"======");
