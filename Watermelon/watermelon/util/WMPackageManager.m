@@ -8,9 +8,9 @@
 
 #import "WMPackageManager.h"
 
-#import <AFURLSessionManager.h>
+#import "AFURLSessionManager.h"
 
-#import <RealReachability.h>
+#import "RealReachability.h"
 
 #import "WMVer.h"
 
@@ -18,7 +18,7 @@
 
 #import "WMEnvironmentConfigure.h"
 
-#import <SSZipArchive.h>
+#import "SSZipArchive.h"
 
 NSString *const WatermelonDefaultPackageDirectoryName = @"dist";
 

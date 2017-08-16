@@ -23,7 +23,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (= 3.1.0)
-  - RealReachability
+  - RealReachability (= 1.1.9)
   - SSZipArchive (= 1.8.1)
 
 SPEC CHECKSUMS:
@@ -31,6 +31,6 @@ SPEC CHECKSUMS:
   RealReachability: a8c483900986a0f3305733961effbfbb00637a02
   SSZipArchive: 04547dfa448be5ed7ecbaf7eaf8a6e9eb9b42997
 
-PODFILE CHECKSUM: 478d8c083069b82866632fafc9aaf143eda006a4
+PODFILE CHECKSUM: 51458feac0818cec5176bc6f58ff2b15be217619
 
 COCOAPODS: 1.2.0.beta.1
