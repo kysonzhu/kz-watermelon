@@ -8,12 +8,12 @@
 
 #import "WMWebViewController.h"
 #import "Watermelon.h"
-#import "WMPackageManager.h"
 
 #define K_SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
 #define K_SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
 #define K_STATESBAR_HEIGHT 20
 
+extern NSString*  const WatermelonDefaultPackageDirectoryName;
 
 
 @interface WMWebViewController ()<UIWebViewDelegate>
@@ -47,7 +47,7 @@
     switch ([Watermelon shareInstance].currentBootModeType) {
         case WMBootModeTypeBasicModule: {
             NSString *documentDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-            NSString *distPath = [documentDirectory stringByAppendingPathComponent:K_DEFAULT_PACKAGE_NAME];
+            NSString *distPath = [documentDirectory stringByAppendingPathComponent:WatermelonDefaultPackageDirectoryName];
             NSString *packageURLString = [distPath stringByAppendingFormat:@"/watermelon/index.html"];
             NSURL *watermelonURL = [NSURL fileURLWithPath:packageURLString];
             NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:watermelonURL];
@@ -57,6 +57,10 @@
         }
             break;
         case WMBootModeTypeAllModule: {
+            
+        }
+            break;
+        case WMBootModeTypeUpdateModule: {
             
         }
             break;

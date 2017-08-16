@@ -20,7 +20,13 @@
 
 #import <SSZipArchive.h>
 
+NSString *const WatermelonDefaultPackageDirectoryName = @"dist";
+
+
+#define SETTING_FILE_LAST_COMPONENT @"/ver.json"
+
 @interface WMPackageManager ()
+
 
 @property (nonatomic, assign) float timeInterval;
 
@@ -118,7 +124,7 @@
         NSString *packageName = ver.data.firstObject.packageName;
         if (packageName.length > 0) {
             NSString *documentDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-            NSString *distPath = [documentDirectory stringByAppendingPathComponent:K_DEFAULT_PACKAGE_NAME];
+            NSString *distPath = [documentDirectory stringByAppendingPathComponent:WatermelonDefaultPackageDirectoryName];
             
             BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:distPath];
             
@@ -134,7 +140,7 @@
 +(void) installLocalPackage {
     
     NSString *documentDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-    NSString *distPath = [documentDirectory stringByAppendingPathComponent:K_DEFAULT_PACKAGE_NAME];
+    NSString *distPath = [documentDirectory stringByAppendingPathComponent:WatermelonDefaultPackageDirectoryName];
     
     NSString *localPackagePath = [[NSBundle mainBundle] pathForResource:@"watermelon" ofType:@"zip"];
     
@@ -160,14 +166,14 @@
     }
 
     NSString *documentDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-    NSString *distPath = [documentDirectory stringByAppendingPathComponent:K_DEFAULT_PACKAGE_NAME];
+    NSString *distPath = [documentDirectory stringByAppendingPathComponent:WatermelonDefaultPackageDirectoryName];
     //remove old package
     [fileManager removeItemAtPath:distPath error:nil];
 
     BOOL zipSuccess = [SSZipArchive unzipFileAtPath:defaultDownloadPath toDestination:distPath];
     if (zipSuccess) {
         NSString *cacheDirectory = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
-        NSString *pathOfVerJson = [cacheDirectory stringByAppendingString:@"/ver.json"];
+        NSString *pathOfVerJson = [cacheDirectory stringByAppendingString:SETTING_FILE_LAST_COMPONENT];
         NSString *verJson = [NSString stringWithContentsOfFile:pathOfVerJson encoding:NSUTF8StringEncoding error:nil];
         [WMEnvironmentConfigure setVerJson:verJson];
     }else {
@@ -219,7 +225,7 @@
             NSString *filePathString = [filePath path];
             //set directory
             NSString *cacheDirectory = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
-            NSString *path = [cacheDirectory stringByAppendingString:@"/ver.json"];
+            NSString *path = [cacheDirectory stringByAppendingString:SETTING_FILE_LAST_COMPONENT];
             //remove old package
             NSFileManager *fileManager = [NSFileManager defaultManager];
             [fileManager removeItemAtPath:path error:nil];

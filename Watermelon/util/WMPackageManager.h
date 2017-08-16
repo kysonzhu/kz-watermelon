@@ -12,7 +12,7 @@
 
 static NSString  *WatermelonNotificationNewVersionFinded = @"cn.kyson.Notification.WatermelonNotificationNewVersionFinded";
 
-#define K_DEFAULT_PACKAGE_NAME @"dist"
+extern NSString*  const WatermelonDefaultPackageDirectoryName;
 
 typedef void(^WatermelonDownloadSuccess)(NSString *zipPath);
 typedef void(^WatermelonDownloadFailed)(NSError *error);
