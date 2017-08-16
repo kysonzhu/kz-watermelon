@@ -19,7 +19,6 @@
 
 CREATE_STRING_PROPERTY(zipDownloadUrl)
 CREATE_STRING_PROPERTY(version)
-CREATE_STRING_PROPERTY(packageName)
 
 
 @end
