@@ -16,6 +16,7 @@
 
 +(void)start {
     [WMEnvironmentConfigure setVerJson:nil];
+    
     [WMPackageManager installPackageWithDefaultDownloadPath];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:WatermelonNotificationModeSettingFinished object:nil];

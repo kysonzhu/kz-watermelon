@@ -120,17 +120,13 @@ NSString *const WatermelonDefaultPackageDirectoryName = @"dist";
 +(BOOL)isPackageExists {
     NSString *verJson = [WMEnvironmentConfigure verJson];
     if (verJson) {
-        WMVer *ver = [WMVer verWithVerJson:verJson];
-        NSString *packageName = ver.data.firstObject.packageName;
-        if (packageName.length > 0) {
-            NSString *documentDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-            NSString *distPath = [documentDirectory stringByAppendingPathComponent:WatermelonDefaultPackageDirectoryName];
+        NSString *documentDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+        NSString *distPath = [documentDirectory stringByAppendingPathComponent:WatermelonDefaultPackageDirectoryName];
+        
+        BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:distPath];
+        
+        return fileExists;
             
-            BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:distPath];
-            
-            return fileExists;
-            
-        }
     }
     
     return NO;
