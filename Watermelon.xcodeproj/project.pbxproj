@@ -7,52 +7,56 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		96B0DD071F3956B7000982EF /* WMBIOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B0DD061F3956B7000982EF /* WMBIOS.m */; };
-		96C2C6531F428D9400AFA21B /* WMBasicMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C2C6521F428D9400AFA21B /* WMBasicMode.m */; };
-		96C2C6561F428DB300AFA21B /* WMUpdateMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C2C6551F428DB300AFA21B /* WMUpdateMode.m */; };
-		96C2C6591F428DEB00AFA21B /* WMAllMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C2C6581F428DEB00AFA21B /* WMAllMode.m */; };
+		96C2C6761F43F30C00AFA21B /* WMAllMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C2C65E1F43F30C00AFA21B /* WMAllMode.m */; };
+		96C2C6771F43F30C00AFA21B /* WMBasicMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C2C6601F43F30C00AFA21B /* WMBasicMode.m */; };
+		96C2C6781F43F30C00AFA21B /* WMUpdateMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C2C6631F43F30C00AFA21B /* WMUpdateMode.m */; };
+		96C2C6791F43F30C00AFA21B /* MDSModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C2C6661F43F30C00AFA21B /* MDSModel.m */; };
+		96C2C67A1F43F30C00AFA21B /* WMVer.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C2C6681F43F30C00AFA21B /* WMVer.m */; };
+		96C2C67B1F43F30C00AFA21B /* WMBIOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C2C66B1F43F30C00AFA21B /* WMBIOS.m */; };
+		96C2C67C1F43F30C00AFA21B /* WMEnvironmentConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C2C66D1F43F30C00AFA21B /* WMEnvironmentConfigure.m */; };
+		96C2C67D1F43F30C00AFA21B /* WMJsonHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C2C66F1F43F30C00AFA21B /* WMJsonHandler.m */; };
+		96C2C67E1F43F30C00AFA21B /* WMPackageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C2C6711F43F30C00AFA21B /* WMPackageManager.m */; };
+		96C2C67F1F43F30C00AFA21B /* Watermelon.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C2C6731F43F30C00AFA21B /* Watermelon.m */; };
+		96C2C6801F43F30C00AFA21B /* WMResourceCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C2C6751F43F30C00AFA21B /* WMResourceCacheManager.m */; };
 		D9CC76C72EF1EA4EC4C8B7F1 /* libPods-Watermelon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D749FAA53DFD515A82920CD /* libPods-Watermelon.a */; };
 		DEE8F0C71F38965900CE80A9 /* watermelon.zip in Resources */ = {isa = PBXBuildFile; fileRef = DEE8F0C61F38965900CE80A9 /* watermelon.zip */; };
-		DEE8F0CB1F38969E00CE80A9 /* WMVer.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE8F0CA1F38969E00CE80A9 /* WMVer.m */; };
-		DEE8F0CE1F38977500CE80A9 /* MDSModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE8F0CD1F38977500CE80A9 /* MDSModel.m */; };
-		DEE8F0D21F389A6100CE80A9 /* WMJsonHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE8F0D11F389A6100CE80A9 /* WMJsonHandler.m */; };
-		DEE8F0D51F389B2B00CE80A9 /* WMEnvironmentConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE8F0D41F389B2B00CE80A9 /* WMEnvironmentConfigure.m */; };
-		DEE8F0D81F38C09D00CE80A9 /* WMPackageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE8F0D71F38C09D00CE80A9 /* WMPackageManager.m */; };
 		DEF8C15D1F35514D00619822 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF8C15C1F35514D00619822 /* main.m */; };
 		DEF8C1601F35514D00619822 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF8C15F1F35514D00619822 /* AppDelegate.m */; };
 		DEF8C1631F35514D00619822 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF8C1621F35514D00619822 /* ViewController.m */; };
 		DEF8C1661F35514D00619822 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEF8C1641F35514D00619822 /* Main.storyboard */; };
 		DEF8C1681F35514D00619822 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEF8C1671F35514D00619822 /* Assets.xcassets */; };
 		DEF8C16B1F35514D00619822 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEF8C1691F35514D00619822 /* LaunchScreen.storyboard */; };
-		DEF8C18D1F35542F00619822 /* Watermelon.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF8C18C1F35542F00619822 /* Watermelon.m */; };
-		DEF8C1901F3554C400619822 /* WMResourceCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF8C18F1F3554C400619822 /* WMResourceCacheManager.m */; };
 		DEF8C1931F35564D00619822 /* WMWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF8C1921F35564D00619822 /* WMWebViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		148A6AA0DA7BC6369DC08DFC /* Pods-Watermelon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Watermelon.release.xcconfig"; path = "Pods/Target Support Files/Pods-Watermelon/Pods-Watermelon.release.xcconfig"; sourceTree = "<group>"; };
-		96B0DD051F3956B7000982EF /* WMBIOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMBIOS.h; sourceTree = "<group>"; };
-		96B0DD061F3956B7000982EF /* WMBIOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMBIOS.m; sourceTree = "<group>"; };
-		96C2C6511F428D9400AFA21B /* WMBasicMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMBasicMode.h; sourceTree = "<group>"; };
-		96C2C6521F428D9400AFA21B /* WMBasicMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMBasicMode.m; sourceTree = "<group>"; };
-		96C2C6541F428DB300AFA21B /* WMUpdateMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMUpdateMode.h; sourceTree = "<group>"; };
-		96C2C6551F428DB300AFA21B /* WMUpdateMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMUpdateMode.m; sourceTree = "<group>"; };
-		96C2C6571F428DEB00AFA21B /* WMAllMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMAllMode.h; sourceTree = "<group>"; };
-		96C2C6581F428DEB00AFA21B /* WMAllMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMAllMode.m; sourceTree = "<group>"; };
-		96C2C65A1F42918300AFA21B /* WMModeProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WMModeProtocol.h; sourceTree = "<group>"; };
+		96C2C65D1F43F30C00AFA21B /* WMAllMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMAllMode.h; sourceTree = "<group>"; };
+		96C2C65E1F43F30C00AFA21B /* WMAllMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMAllMode.m; sourceTree = "<group>"; };
+		96C2C65F1F43F30C00AFA21B /* WMBasicMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMBasicMode.h; sourceTree = "<group>"; };
+		96C2C6601F43F30C00AFA21B /* WMBasicMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMBasicMode.m; sourceTree = "<group>"; };
+		96C2C6611F43F30C00AFA21B /* WMModeProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMModeProtocol.h; sourceTree = "<group>"; };
+		96C2C6621F43F30C00AFA21B /* WMUpdateMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMUpdateMode.h; sourceTree = "<group>"; };
+		96C2C6631F43F30C00AFA21B /* WMUpdateMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMUpdateMode.m; sourceTree = "<group>"; };
+		96C2C6651F43F30C00AFA21B /* MDSModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDSModel.h; sourceTree = "<group>"; };
+		96C2C6661F43F30C00AFA21B /* MDSModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDSModel.m; sourceTree = "<group>"; };
+		96C2C6671F43F30C00AFA21B /* WMVer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMVer.h; sourceTree = "<group>"; };
+		96C2C6681F43F30C00AFA21B /* WMVer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMVer.m; sourceTree = "<group>"; };
+		96C2C66A1F43F30C00AFA21B /* WMBIOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMBIOS.h; sourceTree = "<group>"; };
+		96C2C66B1F43F30C00AFA21B /* WMBIOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMBIOS.m; sourceTree = "<group>"; };
+		96C2C66C1F43F30C00AFA21B /* WMEnvironmentConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMEnvironmentConfigure.h; sourceTree = "<group>"; };
+		96C2C66D1F43F30C00AFA21B /* WMEnvironmentConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMEnvironmentConfigure.m; sourceTree = "<group>"; };
+		96C2C66E1F43F30C00AFA21B /* WMJsonHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMJsonHandler.h; sourceTree = "<group>"; };
+		96C2C66F1F43F30C00AFA21B /* WMJsonHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMJsonHandler.m; sourceTree = "<group>"; };
+		96C2C6701F43F30C00AFA21B /* WMPackageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMPackageManager.h; sourceTree = "<group>"; };
+		96C2C6711F43F30C00AFA21B /* WMPackageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMPackageManager.m; sourceTree = "<group>"; };
+		96C2C6721F43F30C00AFA21B /* Watermelon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Watermelon.h; sourceTree = "<group>"; };
+		96C2C6731F43F30C00AFA21B /* Watermelon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Watermelon.m; sourceTree = "<group>"; };
+		96C2C6741F43F30C00AFA21B /* WMResourceCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMResourceCacheManager.h; sourceTree = "<group>"; };
+		96C2C6751F43F30C00AFA21B /* WMResourceCacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMResourceCacheManager.m; sourceTree = "<group>"; };
 		9D749FAA53DFD515A82920CD /* libPods-Watermelon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Watermelon.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD990F7B4803F0F3CE7DAA88 /* Pods-Watermelon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Watermelon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Watermelon/Pods-Watermelon.debug.xcconfig"; sourceTree = "<group>"; };
 		DEE8F0C61F38965900CE80A9 /* watermelon.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = watermelon.zip; sourceTree = "<group>"; };
-		DEE8F0C91F38969E00CE80A9 /* WMVer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMVer.h; sourceTree = "<group>"; };
-		DEE8F0CA1F38969E00CE80A9 /* WMVer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMVer.m; sourceTree = "<group>"; };
-		DEE8F0CC1F38977500CE80A9 /* MDSModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDSModel.h; sourceTree = "<group>"; };
-		DEE8F0CD1F38977500CE80A9 /* MDSModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDSModel.m; sourceTree = "<group>"; };
-		DEE8F0D01F389A6100CE80A9 /* WMJsonHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMJsonHandler.h; sourceTree = "<group>"; };
-		DEE8F0D11F389A6100CE80A9 /* WMJsonHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMJsonHandler.m; sourceTree = "<group>"; };
-		DEE8F0D31F389B2B00CE80A9 /* WMEnvironmentConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMEnvironmentConfigure.h; sourceTree = "<group>"; };
-		DEE8F0D41F389B2B00CE80A9 /* WMEnvironmentConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMEnvironmentConfigure.m; sourceTree = "<group>"; };
-		DEE8F0D61F38C09D00CE80A9 /* WMPackageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMPackageManager.h; sourceTree = "<group>"; };
-		DEE8F0D71F38C09D00CE80A9 /* WMPackageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMPackageManager.m; sourceTree = "<group>"; };
 		DEF8C1581F35514D00619822 /* Watermelon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Watermelon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEF8C15C1F35514D00619822 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DEF8C15E1F35514D00619822 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -63,10 +67,6 @@
 		DEF8C1671F35514D00619822 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DEF8C16A1F35514D00619822 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DEF8C16C1F35514D00619822 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DEF8C18B1F35542F00619822 /* Watermelon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Watermelon.h; sourceTree = "<group>"; };
-		DEF8C18C1F35542F00619822 /* Watermelon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Watermelon.m; sourceTree = "<group>"; };
-		DEF8C18E1F3554C400619822 /* WMResourceCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMResourceCacheManager.h; sourceTree = "<group>"; };
-		DEF8C18F1F3554C400619822 /* WMResourceCacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMResourceCacheManager.m; sourceTree = "<group>"; };
 		DEF8C1911F35564D00619822 /* WMWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMWebViewController.h; sourceTree = "<group>"; };
 		DEF8C1921F35564D00619822 /* WMWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMWebViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,18 +92,58 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		96C2C6501F428D7A00AFA21B /* mode */ = {
+		96C2C65B1F43F30C00AFA21B /* watermelon */ = {
 			isa = PBXGroup;
 			children = (
-				96C2C6511F428D9400AFA21B /* WMBasicMode.h */,
-				96C2C6521F428D9400AFA21B /* WMBasicMode.m */,
-				96C2C6541F428DB300AFA21B /* WMUpdateMode.h */,
-				96C2C6551F428DB300AFA21B /* WMUpdateMode.m */,
-				96C2C6571F428DEB00AFA21B /* WMAllMode.h */,
-				96C2C6581F428DEB00AFA21B /* WMAllMode.m */,
-				96C2C65A1F42918300AFA21B /* WMModeProtocol.h */,
+				96C2C65C1F43F30C00AFA21B /* mode */,
+				96C2C6641F43F30C00AFA21B /* model */,
+				96C2C6691F43F30C00AFA21B /* util */,
+				96C2C6721F43F30C00AFA21B /* Watermelon.h */,
+				96C2C6731F43F30C00AFA21B /* Watermelon.m */,
+				96C2C6741F43F30C00AFA21B /* WMResourceCacheManager.h */,
+				96C2C6751F43F30C00AFA21B /* WMResourceCacheManager.m */,
+			);
+			path = watermelon;
+			sourceTree = "<group>";
+		};
+		96C2C65C1F43F30C00AFA21B /* mode */ = {
+			isa = PBXGroup;
+			children = (
+				96C2C65D1F43F30C00AFA21B /* WMAllMode.h */,
+				96C2C65E1F43F30C00AFA21B /* WMAllMode.m */,
+				96C2C65F1F43F30C00AFA21B /* WMBasicMode.h */,
+				96C2C6601F43F30C00AFA21B /* WMBasicMode.m */,
+				96C2C6611F43F30C00AFA21B /* WMModeProtocol.h */,
+				96C2C6621F43F30C00AFA21B /* WMUpdateMode.h */,
+				96C2C6631F43F30C00AFA21B /* WMUpdateMode.m */,
 			);
 			path = mode;
+			sourceTree = "<group>";
+		};
+		96C2C6641F43F30C00AFA21B /* model */ = {
+			isa = PBXGroup;
+			children = (
+				96C2C6651F43F30C00AFA21B /* MDSModel.h */,
+				96C2C6661F43F30C00AFA21B /* MDSModel.m */,
+				96C2C6671F43F30C00AFA21B /* WMVer.h */,
+				96C2C6681F43F30C00AFA21B /* WMVer.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		96C2C6691F43F30C00AFA21B /* util */ = {
+			isa = PBXGroup;
+			children = (
+				96C2C66A1F43F30C00AFA21B /* WMBIOS.h */,
+				96C2C66B1F43F30C00AFA21B /* WMBIOS.m */,
+				96C2C66C1F43F30C00AFA21B /* WMEnvironmentConfigure.h */,
+				96C2C66D1F43F30C00AFA21B /* WMEnvironmentConfigure.m */,
+				96C2C66E1F43F30C00AFA21B /* WMJsonHandler.h */,
+				96C2C66F1F43F30C00AFA21B /* WMJsonHandler.m */,
+				96C2C6701F43F30C00AFA21B /* WMPackageManager.h */,
+				96C2C6711F43F30C00AFA21B /* WMPackageManager.m */,
+			);
+			path = util;
 			sourceTree = "<group>";
 		};
 		C259A434B1DC1183D89C2063 /* Frameworks */ = {
@@ -112,32 +152,6 @@
 				9D749FAA53DFD515A82920CD /* libPods-Watermelon.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		DEE8F0C81F38968300CE80A9 /* model */ = {
-			isa = PBXGroup;
-			children = (
-				DEE8F0CC1F38977500CE80A9 /* MDSModel.h */,
-				DEE8F0CD1F38977500CE80A9 /* MDSModel.m */,
-				DEE8F0C91F38969E00CE80A9 /* WMVer.h */,
-				DEE8F0CA1F38969E00CE80A9 /* WMVer.m */,
-			);
-			path = model;
-			sourceTree = "<group>";
-		};
-		DEE8F0CF1F389A5500CE80A9 /* util */ = {
-			isa = PBXGroup;
-			children = (
-				DEE8F0D01F389A6100CE80A9 /* WMJsonHandler.h */,
-				DEE8F0D11F389A6100CE80A9 /* WMJsonHandler.m */,
-				DEE8F0D31F389B2B00CE80A9 /* WMEnvironmentConfigure.h */,
-				DEE8F0D41F389B2B00CE80A9 /* WMEnvironmentConfigure.m */,
-				DEE8F0D61F38C09D00CE80A9 /* WMPackageManager.h */,
-				DEE8F0D71F38C09D00CE80A9 /* WMPackageManager.m */,
-				96B0DD051F3956B7000982EF /* WMBIOS.h */,
-				96B0DD061F3956B7000982EF /* WMBIOS.m */,
-			);
-			path = util;
 			sourceTree = "<group>";
 		};
 		DEF8C14F1F35514D00619822 = {
@@ -161,16 +175,10 @@
 		DEF8C15A1F35514D00619822 /* Watermelon */ = {
 			isa = PBXGroup;
 			children = (
-				96C2C6501F428D7A00AFA21B /* mode */,
-				DEE8F0CF1F389A5500CE80A9 /* util */,
-				DEE8F0C81F38968300CE80A9 /* model */,
+				96C2C65B1F43F30C00AFA21B /* watermelon */,
 				DEF8C1941F35578B00619822 /* resource */,
 				DEF8C15E1F35514D00619822 /* AppDelegate.h */,
 				DEF8C15F1F35514D00619822 /* AppDelegate.m */,
-				DEF8C18B1F35542F00619822 /* Watermelon.h */,
-				DEF8C18C1F35542F00619822 /* Watermelon.m */,
-				DEF8C18E1F3554C400619822 /* WMResourceCacheManager.h */,
-				DEF8C18F1F3554C400619822 /* WMResourceCacheManager.m */,
 				DEF8C1911F35564D00619822 /* WMWebViewController.h */,
 				DEF8C1921F35564D00619822 /* WMWebViewController.m */,
 				DEF8C1611F35514D00619822 /* ViewController.h */,
@@ -324,20 +332,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEE8F0D81F38C09D00CE80A9 /* WMPackageManager.m in Sources */,
-				96C2C6531F428D9400AFA21B /* WMBasicMode.m in Sources */,
 				DEF8C1631F35514D00619822 /* ViewController.m in Sources */,
+				96C2C6771F43F30C00AFA21B /* WMBasicMode.m in Sources */,
+				96C2C67D1F43F30C00AFA21B /* WMJsonHandler.m in Sources */,
+				96C2C6791F43F30C00AFA21B /* MDSModel.m in Sources */,
+				96C2C67A1F43F30C00AFA21B /* WMVer.m in Sources */,
+				96C2C67F1F43F30C00AFA21B /* Watermelon.m in Sources */,
+				96C2C67B1F43F30C00AFA21B /* WMBIOS.m in Sources */,
+				96C2C6801F43F30C00AFA21B /* WMResourceCacheManager.m in Sources */,
 				DEF8C1931F35564D00619822 /* WMWebViewController.m in Sources */,
-				DEE8F0CE1F38977500CE80A9 /* MDSModel.m in Sources */,
-				96C2C6561F428DB300AFA21B /* WMUpdateMode.m in Sources */,
-				96B0DD071F3956B7000982EF /* WMBIOS.m in Sources */,
-				DEE8F0D21F389A6100CE80A9 /* WMJsonHandler.m in Sources */,
-				DEE8F0D51F389B2B00CE80A9 /* WMEnvironmentConfigure.m in Sources */,
-				DEF8C18D1F35542F00619822 /* Watermelon.m in Sources */,
-				DEE8F0CB1F38969E00CE80A9 /* WMVer.m in Sources */,
-				DEF8C1901F3554C400619822 /* WMResourceCacheManager.m in Sources */,
-				96C2C6591F428DEB00AFA21B /* WMAllMode.m in Sources */,
+				96C2C6761F43F30C00AFA21B /* WMAllMode.m in Sources */,
+				96C2C67E1F43F30C00AFA21B /* WMPackageManager.m in Sources */,
 				DEF8C1601F35514D00619822 /* AppDelegate.m in Sources */,
+				96C2C67C1F43F30C00AFA21B /* WMEnvironmentConfigure.m in Sources */,
+				96C2C6781F43F30C00AFA21B /* WMUpdateMode.m in Sources */,
 				DEF8C15D1F35514D00619822 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
