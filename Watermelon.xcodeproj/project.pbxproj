@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		962163021F43F489005DB140 /* WMWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 962163011F43F489005DB140 /* WMWebViewController.m */; };
 		96C2C6761F43F30C00AFA21B /* WMAllMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C2C65E1F43F30C00AFA21B /* WMAllMode.m */; };
 		96C2C6771F43F30C00AFA21B /* WMBasicMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C2C6601F43F30C00AFA21B /* WMBasicMode.m */; };
 		96C2C6781F43F30C00AFA21B /* WMUpdateMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C2C6631F43F30C00AFA21B /* WMUpdateMode.m */; };
@@ -26,11 +27,12 @@
 		DEF8C1661F35514D00619822 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEF8C1641F35514D00619822 /* Main.storyboard */; };
 		DEF8C1681F35514D00619822 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEF8C1671F35514D00619822 /* Assets.xcassets */; };
 		DEF8C16B1F35514D00619822 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEF8C1691F35514D00619822 /* LaunchScreen.storyboard */; };
-		DEF8C1931F35564D00619822 /* WMWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF8C1921F35564D00619822 /* WMWebViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		148A6AA0DA7BC6369DC08DFC /* Pods-Watermelon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Watermelon.release.xcconfig"; path = "Pods/Target Support Files/Pods-Watermelon/Pods-Watermelon.release.xcconfig"; sourceTree = "<group>"; };
+		962163001F43F489005DB140 /* WMWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMWebViewController.h; sourceTree = "<group>"; };
+		962163011F43F489005DB140 /* WMWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMWebViewController.m; sourceTree = "<group>"; };
 		96C2C65D1F43F30C00AFA21B /* WMAllMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMAllMode.h; sourceTree = "<group>"; };
 		96C2C65E1F43F30C00AFA21B /* WMAllMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMAllMode.m; sourceTree = "<group>"; };
 		96C2C65F1F43F30C00AFA21B /* WMBasicMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMBasicMode.h; sourceTree = "<group>"; };
@@ -67,8 +69,6 @@
 		DEF8C1671F35514D00619822 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DEF8C16A1F35514D00619822 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DEF8C16C1F35514D00619822 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DEF8C1911F35564D00619822 /* WMWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMWebViewController.h; sourceTree = "<group>"; };
-		DEF8C1921F35564D00619822 /* WMWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMWebViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +100,8 @@
 				96C2C6691F43F30C00AFA21B /* util */,
 				96C2C6721F43F30C00AFA21B /* Watermelon.h */,
 				96C2C6731F43F30C00AFA21B /* Watermelon.m */,
+				962163001F43F489005DB140 /* WMWebViewController.h */,
+				962163011F43F489005DB140 /* WMWebViewController.m */,
 				96C2C6741F43F30C00AFA21B /* WMResourceCacheManager.h */,
 				96C2C6751F43F30C00AFA21B /* WMResourceCacheManager.m */,
 			);
@@ -179,8 +181,6 @@
 				DEF8C1941F35578B00619822 /* resource */,
 				DEF8C15E1F35514D00619822 /* AppDelegate.h */,
 				DEF8C15F1F35514D00619822 /* AppDelegate.m */,
-				DEF8C1911F35564D00619822 /* WMWebViewController.h */,
-				DEF8C1921F35564D00619822 /* WMWebViewController.m */,
 				DEF8C1611F35514D00619822 /* ViewController.h */,
 				DEF8C1621F35514D00619822 /* ViewController.m */,
 				DEF8C1641F35514D00619822 /* Main.storyboard */,
@@ -336,11 +336,11 @@
 				96C2C6771F43F30C00AFA21B /* WMBasicMode.m in Sources */,
 				96C2C67D1F43F30C00AFA21B /* WMJsonHandler.m in Sources */,
 				96C2C6791F43F30C00AFA21B /* MDSModel.m in Sources */,
+				962163021F43F489005DB140 /* WMWebViewController.m in Sources */,
 				96C2C67A1F43F30C00AFA21B /* WMVer.m in Sources */,
 				96C2C67F1F43F30C00AFA21B /* Watermelon.m in Sources */,
 				96C2C67B1F43F30C00AFA21B /* WMBIOS.m in Sources */,
 				96C2C6801F43F30C00AFA21B /* WMResourceCacheManager.m in Sources */,
-				DEF8C1931F35564D00619822 /* WMWebViewController.m in Sources */,
 				96C2C6761F43F30C00AFA21B /* WMAllMode.m in Sources */,
 				96C2C67E1F43F30C00AFA21B /* WMPackageManager.m in Sources */,
 				DEF8C1601F35514D00619822 /* AppDelegate.m in Sources */,
