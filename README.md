@@ -13,6 +13,11 @@ Add the following line to your Podfile:
 pod 'Watermelon'
 ```
 run `pod install`
+
+- **[LocalCache](http://www.kyson.cn/demo/watermelon.zip)**
+
+add package.zip to your project(this zip file is your local cache of package setted in ver.json)
+
 * usage
 
 ```objc
@@ -34,7 +39,7 @@ Your VerJson is liked:
 
 * Setting Your H5 package
 
-if your package is yourpackage.zip,and your host address is www.yourhost.com,then your verjson is liked
+if your package is yourpackage.zip,and your host address is www.yourhost.com, then your verjson is liked
 
 ```objc
 {"errorMsg": "", "code": 0, "data": [{"zipDownloadUrl": "http://www.yourhost.com/yourpackage.zip", "version": "1.0.1"}]}
