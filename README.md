@@ -50,6 +50,10 @@ if your package is yourpackage.zip,and your host address is www.yourhost.com, th
 
 
 ## Discussion
+You can add comments here : [Hybrid 框架Watermelon详解](http://kyson.cn/index.php/archives/91/)
+
+or join the chat group
+
 ![Github](https://github.com/kysonzhu/kz-watermelon/blob/master/wechat_group.jpg?raw=true)
 
 
