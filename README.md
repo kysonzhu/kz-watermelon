@@ -16,7 +16,7 @@ run `pod install`
 
 - **[LocalCache](http://www.kyson.cn/demo/watermelon.zip)**
 
-add package.zip to your project(this zip file is your local cache of package setted in ver.json)
+Add your_package.zip to your project(this zip file is your local cache of package setted in ver.json)
 
 * usage
 
