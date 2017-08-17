@@ -11,6 +11,8 @@
 #import "WMBIOS.h"
 #import "WMModeProtocol.h"
 
+#define DEMO_URL_VER_JSON @"http://www.kyson.cn/demo/ver.json"
+
 
 static NSString  *WatermelonNotificationModeSettingFinished = @"cn.kyson.Notification.WatermelonNotificationModeSettingFinished";
 
@@ -26,13 +28,9 @@ static NSString  *WatermelonNotificationModeSettingFinished = @"cn.kyson.Notific
 +(Watermelon *) shareInstance ;
 
 
-
 /**
- * register service
+ *
  */
-+(void) registeWatermelonService;
-
-
-
++(void) registeWatermelonServiceWithVerJsonURL:(NSString *) URLString;
 
 @end

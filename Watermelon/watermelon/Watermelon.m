@@ -45,18 +45,25 @@
 {
     self = [super init];
     if (self) {
+        
+        //start web thread
+        UIWebView *webPool = [[UIWebView alloc]initWithFrame:CGRectZero];
+        [webPool loadHTMLString:@"" baseURL:nil];
+        
         [[RealReachability sharedInstance] startNotifier];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(latestVersionFound:) name:WatermelonNotificationNewVersionFinded object:nil];
     }
     return self;
 }
 
-
-+(void) registeWatermelonService{
++(void) registeWatermelonServiceWithVerJsonURL:(NSString *) URLString{
+    if (URLString.length < 1) {
+        [WMPackageManager shareInstance].verJsonURL = DEMO_URL_VER_JSON;
+    } else {
+        //set VerJsonURL
+        [WMPackageManager shareInstance].verJsonURL = URLString;
+    }
     
-    //start web thread
-    UIWebView *webPool = [[UIWebView alloc]initWithFrame:CGRectZero];
-    [webPool loadHTMLString:@"" baseURL:nil];
     //register
     [[self shareInstance] registService];
     

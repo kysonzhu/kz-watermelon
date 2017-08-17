@@ -63,7 +63,7 @@ NSString *const WatermelonDefaultPackageDirectoryName = @"dist";
                 break;
             case RealStatusViaWWAN:
             case RealStatusViaWiFi:{
-                NSURL *verJsonURL = [NSURL URLWithString:URL_VER_JSON];
+                NSURL *verJsonURL = [NSURL URLWithString:[self shareInstance].verJsonURL];
                 NSError *error = nil;
                 NSString *verJson = [NSString stringWithContentsOfURL:verJsonURL encoding:NSUTF8StringEncoding error:&error];
                 if (!error) {
@@ -94,7 +94,7 @@ NSString *const WatermelonDefaultPackageDirectoryName = @"dist";
 
 
 +(void)checkCurrentVersionIsLatestContinuous:(BOOL)continuous {
-    
+
     [self checkCurrentVersionIsLatest];
     
     NSTimeInterval timeInterval = continuous ? 20 : (60.f * 1000) ;
@@ -179,7 +179,7 @@ NSString *const WatermelonDefaultPackageDirectoryName = @"dist";
 
 
 +(void) downloadRemotePackageSuccess:(WatermelonDownloadSuccess)success failed:(WatermelonDownloadFailed)failed{
-    NSURL *verJsonURL = [NSURL URLWithString:URL_VER_JSON];
+    NSURL *verJsonURL = [NSURL URLWithString:[self shareInstance].verJsonURL];
     NSError *error = nil;
     NSString *verJson = [NSString stringWithContentsOfURL:verJsonURL encoding:NSUTF8StringEncoding error:&error];
     if (!error) {

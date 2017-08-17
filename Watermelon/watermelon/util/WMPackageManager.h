@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-#define URL_VER_JSON @"http://www.kyson.cn/demo/ver.json"
 
 static NSString  *WatermelonNotificationNewVersionFinded = @"cn.kyson.Notification.WatermelonNotificationNewVersionFinded";
 
@@ -24,6 +23,10 @@ typedef void(^WatermelonDownloadFailed)(NSError *error);
  */
 
 @interface WMPackageManager : NSObject
+
++(WMPackageManager *) shareInstance;
+
+@property (nonatomic, copy) NSString *verJsonURL;
 
 /**
  * reset

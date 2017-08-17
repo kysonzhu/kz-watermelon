@@ -22,7 +22,7 @@
     // Override point for customization after application launch.
         
     
-    [Watermelon registeWatermelonService];
+    [Watermelon registeWatermelonServiceWithVerJsonURL:DEMO_URL_VER_JSON];
     return YES;
 }
 
