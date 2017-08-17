@@ -45,4 +45,5 @@ if your package is yourpackage.zip,and your host address is www.yourhost.com,the
 
 
 ## Sponsor
-
+![Github](http://outgtntjo.bkt.clouddn.com/alipay.jpg)
+![Github](http://outgtntjo.bkt.clouddn.com/wechatpay.jpg)
