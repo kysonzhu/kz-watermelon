@@ -9,9 +9,13 @@
 #import "WMWebViewController.h"
 #import "Watermelon.h"
 
+#import "WMServiceHandler.h"
+
 #define K_SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
 #define K_SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
 #define K_STATESBAR_HEIGHT 20
+
+#define k_SERVICE_SCHEME @"watermelon"
 
 extern NSString*  const WatermelonDefaultPackageDirectoryName;
 
@@ -79,6 +83,14 @@ extern NSString*  const WatermelonDefaultPackageDirectoryName;
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
     
+    NSURL *URL = request.URL;
+    NSString *scheme = URL.scheme;
+    if ([scheme isEqualToString:k_SERVICE_SCHEME]) {
+        WMService *service = [WMService serviceWithURL:URL];
+        [WMServiceHandler handleService:service];
+        return NO;
+    }
+    
     return YES;
 }
 
@@ -100,7 +112,7 @@ extern NSString*  const WatermelonDefaultPackageDirectoryName;
 -(UIWebView *)webView {
     if (!_webView) {
         _webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, K_STATESBAR_HEIGHT, K_SCREEN_WIDTH, K_SCREEN_HEIGHT - K_STATESBAR_HEIGHT)];
-        
+        _webView.delegate = self;
     }
     
     return _webView;

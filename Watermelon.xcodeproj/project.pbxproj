@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		962163021F43F489005DB140 /* WMWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 962163011F43F489005DB140 /* WMWebViewController.m */; };
+		96741CB81F45A2BC00D4CF68 /* WMServiceHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 96741CB71F45A2BC00D4CF68 /* WMServiceHandler.m */; };
+		96741CBB1F45A31200D4CF68 /* WMService.m in Sources */ = {isa = PBXBuildFile; fileRef = 96741CBA1F45A31200D4CF68 /* WMService.m */; };
 		96C2C6761F43F30C00AFA21B /* WMAllMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C2C65E1F43F30C00AFA21B /* WMAllMode.m */; };
 		96C2C6771F43F30C00AFA21B /* WMBasicMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C2C6601F43F30C00AFA21B /* WMBasicMode.m */; };
 		96C2C6781F43F30C00AFA21B /* WMUpdateMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C2C6631F43F30C00AFA21B /* WMUpdateMode.m */; };
@@ -33,6 +35,10 @@
 		148A6AA0DA7BC6369DC08DFC /* Pods-Watermelon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Watermelon.release.xcconfig"; path = "Pods/Target Support Files/Pods-Watermelon/Pods-Watermelon.release.xcconfig"; sourceTree = "<group>"; };
 		962163001F43F489005DB140 /* WMWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMWebViewController.h; sourceTree = "<group>"; };
 		962163011F43F489005DB140 /* WMWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMWebViewController.m; sourceTree = "<group>"; };
+		96741CB61F45A2BC00D4CF68 /* WMServiceHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMServiceHandler.h; sourceTree = "<group>"; };
+		96741CB71F45A2BC00D4CF68 /* WMServiceHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMServiceHandler.m; sourceTree = "<group>"; };
+		96741CB91F45A31200D4CF68 /* WMService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMService.h; sourceTree = "<group>"; };
+		96741CBA1F45A31200D4CF68 /* WMService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMService.m; sourceTree = "<group>"; };
 		96C2C65D1F43F30C00AFA21B /* WMAllMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMAllMode.h; sourceTree = "<group>"; };
 		96C2C65E1F43F30C00AFA21B /* WMAllMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMAllMode.m; sourceTree = "<group>"; };
 		96C2C65F1F43F30C00AFA21B /* WMBasicMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMBasicMode.h; sourceTree = "<group>"; };
@@ -92,9 +98,21 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		96741CB51F45A2A500D4CF68 /* service */ = {
+			isa = PBXGroup;
+			children = (
+				96741CB61F45A2BC00D4CF68 /* WMServiceHandler.h */,
+				96741CB71F45A2BC00D4CF68 /* WMServiceHandler.m */,
+				96741CB91F45A31200D4CF68 /* WMService.h */,
+				96741CBA1F45A31200D4CF68 /* WMService.m */,
+			);
+			path = service;
+			sourceTree = "<group>";
+		};
 		96C2C65B1F43F30C00AFA21B /* watermelon */ = {
 			isa = PBXGroup;
 			children = (
+				96741CB51F45A2A500D4CF68 /* service */,
 				96C2C65C1F43F30C00AFA21B /* mode */,
 				96C2C6641F43F30C00AFA21B /* model */,
 				96C2C6691F43F30C00AFA21B /* util */,
@@ -332,10 +350,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96741CB81F45A2BC00D4CF68 /* WMServiceHandler.m in Sources */,
 				DEF8C1631F35514D00619822 /* ViewController.m in Sources */,
 				96C2C6771F43F30C00AFA21B /* WMBasicMode.m in Sources */,
 				96C2C67D1F43F30C00AFA21B /* WMJsonHandler.m in Sources */,
 				96C2C6791F43F30C00AFA21B /* MDSModel.m in Sources */,
+				96741CBB1F45A31200D4CF68 /* WMService.m in Sources */,
 				962163021F43F489005DB140 /* WMWebViewController.m in Sources */,
 				96C2C67A1F43F30C00AFA21B /* WMVer.m in Sources */,
 				96C2C67F1F43F30C00AFA21B /* Watermelon.m in Sources */,
