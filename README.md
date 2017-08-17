@@ -16,7 +16,7 @@ run `pod install`
 
 - **[LocalCache](http://www.kyson.cn/demo/watermelon.zip)**
 
-Add your_package.zip to your project(this zip file is your local cache of package setted in ver.json)
+add package.zip to your project(this zip file is your local cache of package setted in ver.json)
 
 * usage
 
@@ -49,6 +49,12 @@ if your package is yourpackage.zip,and your host address is www.yourhost.com, th
 ## Detail Useage
 
 
+## Discussion
+![Github](https://github.com/kysonzhu/kz-watermelon/blob/master/wechat_group.jpg?raw=true)
+
+
+
 ## Sponsor
 ![Github](http://outgtntjo.bkt.clouddn.com/alipay.jpg?imageView2/2/w/200)
 ![Github](http://outgtntjo.bkt.clouddn.com/wechatpay.jpg?imageView2/2/w/200/)
+
