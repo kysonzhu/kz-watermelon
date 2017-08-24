@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name = 'Watermelon'
-s.version = '1.0.7'
+s.version = '1.0.8'
 s.license = 'MIT'
 s.summary = 'A Hybrid solution for iOS.'
 s.homepage = 'https://github.com/kysonzhu/kz-watermelon'
